@@ -1,0 +1,18 @@
+# Netlify hosts only the static ChainGuard dashboard (frontend/).
+# The Python API (chainguard_api) cannot run on Netlify; deploy it separately
+# (see render.yaml) and proxy it below so the dashboard stays same-origin.
+[build]
+  publish = "frontend"
+  command = ""
+
+# Uncomment and set your API's URL to connect the dashboard to it:
+# [[redirects]]
+#   from = "/health"
+#   to = "https://YOUR-CHAINGUARD-API.onrender.com/health"
+#   status = 200
+#   force = true
+# [[redirects]]
+#   from = "/scan*"
+#   to = "https://YOUR-CHAINGUARD-API.onrender.com/scan:splat"
+#   status = 200
+#   force = true
