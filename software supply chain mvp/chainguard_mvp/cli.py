@@ -4,17 +4,30 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sqlite3
 import subprocess
 import sys
 import tempfile
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 from . import __version__
 from .dashboard import write_dashboard
+from .intel import (
+    DEFAULT_TIMEOUT,
+    MALICIOUS_ARCHIVE_URL,
+    MALICIOUS_SOURCE,
+    IntelStore,
+    default_db_path,
+    iso,
+    match_malicious,
+    source_status,
+    utc_now,
+)
 from .llm import vulnerable_functions
-from .osv import query_vulnerabilities
+from .osv import query_osv
 from .parsers import discover_manifests, parse_manifests, parse_manifest, parse_manifests_with_diagnostics
 from .reachability import analyze_package
 from .sbom import create_sbom
@@ -148,6 +161,49 @@ def _decision(vulnerability: dict[str, Any], root: Path, no_llm: bool) -> tuple[
     return record, chain
 
 
+_MATCH_STRENGTH = {"exact_version": 0, "all_versions": 1, "osv_version_matched": 2,
+                   "candidate_range_unevaluated": 3}
+_CONFIRMED_MATCHES = ("exact_version", "all_versions", "osv_version_matched")
+
+
+def _merge_malicious(osv_hits: list[dict[str, Any]], local_hits: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """One finding per (record, package version); sources are listed, not counted twice."""
+    merged: dict[tuple[str, str], dict[str, Any]] = {}
+    for hit in [*osv_hits, *local_hits]:
+        package = hit["package"]
+        key = (hit["record_id"], package["purl"])
+        entry = merged.get(key)
+        if entry is None:
+            entry = merged[key] = {"record_id": hit["record_id"], "match": hit["match"], "sources": [],
+                                   "summary": hit["summary"], "aliases": hit["aliases"],
+                                   "reference": hit["reference"], "package": package}
+        if hit["source"] not in entry["sources"]:
+            entry["sources"].append(hit["source"])
+        if _MATCH_STRENGTH[hit["match"]] < _MATCH_STRENGTH[entry["match"]]:
+            entry["match"] = hit["match"]
+        if not entry["summary"] and hit["summary"]:
+            entry["summary"] = hit["summary"]
+    for entry in merged.values():
+        entry["sources"].sort()
+        entry["confirmed"] = entry["match"] in _CONFIRMED_MATCHES
+    return sorted(merged.values(), key=lambda e: (e["package"]["ecosystem"], e["package"]["name"].lower(),
+                                                  e["record_id"]))
+
+
+def _intel_sources(store: IntelStore | None, store_error: str | None, now: Any) -> list[dict[str, Any]]:
+    if store is None:
+        return [{"name": MALICIOUS_SOURCE, "url": MALICIOUS_ARCHIVE_URL, "status": "store_unavailable",
+                 "error": store_error}]
+    row = store.source(MALICIOUS_SOURCE)
+    return [{"name": MALICIOUS_SOURCE, "url": row["url"] if row else MALICIOUS_ARCHIVE_URL,
+             "status": source_status(row, now), "last_attempt_at": row["last_attempt_at"] if row else None,
+             "last_success_at": row["last_success_at"] if row else None,
+             "last_error": row["last_error"] if row else None,
+             "record_count": row["record_count"] if row else 0,
+             "content_sha256": row["content_sha256"] if row else None,
+             "skipped": row["skipped"] if row else {}}]
+
+
 def _summary(vulnerabilities: list[dict[str, Any]], decisions: list[dict[str, Any]],
              suspicious: list[dict[str, Any]]) -> dict[str, int | float]:
     dismissed = sum(item["status"] == "not_affected" for item in decisions)
@@ -211,14 +267,26 @@ def run(args: argparse.Namespace) -> int:
 
     # The trace schema and existing report schemas are intentionally kept
     # separate; OSV items capture both the batch query and returned IDs.
+    intel_store, intel_error = None, None
+    try:
+        intel_store = IntelStore(args.intel_db or default_db_path())
+    except (OSError, sqlite3.Error) as error:
+        intel_error = str(error)
+        print(f"warning: intelligence store unavailable ({error}); OSV lookups run without cache",
+              file=sys.stderr)
+
     with tracer.stage("osv_lookup", len(packages)) as stage:
-        vulnerabilities = query_vulnerabilities(packages)
+        lookup = query_osv(packages, store=intel_store, timeout=DEFAULT_TIMEOUT)
+        vulnerabilities = lookup["vulnerabilities"]
+        lookup_counts = Counter(row["status"] for row in lookup["lookups"])
         ids_by_purl: dict[str, list[str]] = {}
         for vuln in vulnerabilities:
             ids_by_purl.setdefault(vuln["package"]["purl"], []).append(vuln["id"])
         stage.record(items_out=len(vulnerabilities),
                      summary={"query_status": "completed" if packages else "skipped_empty_inventory",
-                              "vulnerability_count": len(vulnerabilities)},
+                              "vulnerability_count": len(vulnerabilities),
+                              "malicious_record_count": len(lookup["malicious"]),
+                              "lookup_status_counts": dict(sorted(lookup_counts.items()))},
                      items=[{"package": package["name"], "purl": package["purl"],
                              "vulnerability_ids": ids_by_purl.get(package["purl"], [])}
                             for package in packages])
@@ -290,6 +358,35 @@ def run(args: argparse.Namespace) -> int:
         report["unresolved_dependencies"] = unresolved_deps
     report_path = out_dir / "report.json"
     report_path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+
+    # Known-malicious packages are kept out of report.json (its structure is pinned by tests)
+    # and written to intel.json with the source freshness and per-package lookup status.
+    local_hits = ([hit for package in packages for hit in match_malicious(intel_store, package)]
+                  if intel_store is not None else [])
+    known_malicious = _merge_malicious(lookup["malicious"], local_hits)
+    confirmed = sum(1 for item in known_malicious if item["confirmed"])
+    now = utc_now()
+    intel_report = {
+        "schema_version": 1,
+        "generated_at": iso(now),
+        "store": {"path": str(intel_store.path) if intel_store else None, "error": intel_error},
+        "sources": _intel_sources(intel_store, intel_error, now),
+        "advisory_lookups": {"source": "osv.dev", "status_counts": dict(sorted(lookup_counts.items())),
+                             "detail_errors": lookup["detail_errors"],
+                             "packages": lookup["lookups"]},
+        "known_malicious_packages": known_malicious,
+        "counts": {"known_malicious_confirmed": confirmed,
+                   "known_malicious_candidates": len(known_malicious) - confirmed},
+        "interpretation": [
+            "Known malicious packages are a separate category from advisories and suspicious-name signals.",
+            "candidate_range_unevaluated means the record lists a version range this tool does not evaluate; it is not a confirmed match.",
+            "A lookup status of stale_cache, unavailable or store_unavailable means the result is incomplete, not clean.",
+            "Absence from these records does not prove a package is safe.",
+        ],
+    }
+    (out_dir / "intel.json").write_text(json.dumps(intel_report, indent=2) + "\n", encoding="utf-8")
+    if intel_store is not None:
+        intel_store.close()
     tracer.stages.sort(key=lambda item: STAGE_ORDER.index(item["stage"]))
     tracer.totals = {**summary, "vulnerability_total_check":
                      summary["dismissed_unreachable"] + summary["actionable"] == summary["total_vulnerabilities"]}
@@ -299,7 +396,11 @@ def run(args: argparse.Namespace) -> int:
         write_dashboard(trace, report, sbom, vex, str(target), run_time, out_dir / "dashboard.html")
 
     _print_summary(summary)
-    if args.fail_on_actionable and (summary["actionable"] or summary["suspicious_packages"]):
+    print(f"Known malicious packages: {confirmed} confirmed, {len(known_malicious) - confirmed} candidate")
+    degraded = {k: v for k, v in lookup_counts.items() if k in ("stale_cache", "unavailable")}
+    if degraded:
+        print(f"warning: advisory lookups incomplete: {dict(sorted(degraded.items()))}", file=sys.stderr)
+    if args.fail_on_actionable and (summary["actionable"] or summary["suspicious_packages"] or confirmed):
         return 1
     return 0
 
@@ -312,6 +413,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--fail-on-actionable", action="store_true", help="exit 1 when actionable or suspicious findings exist")
     parser.add_argument("--diff", metavar="GIT_REF", help="check only dependencies added since the git ref")
     parser.add_argument("--dashboard", action="store_true", help="write a self-contained HTML dashboard")
+    parser.add_argument("--intel-db", type=Path, default=None,
+                        help="SQLite intelligence store (default: CHAINGUARD_INTEL_DB or ~/.cache/chainguard/intel.sqlite)")
     return parser
 
 

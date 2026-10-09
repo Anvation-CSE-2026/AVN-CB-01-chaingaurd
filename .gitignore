@@ -11,12 +11,16 @@ __pycache__/
 .freebuff/
 scan_workspace/
 scan_workspace_*/
+intel/
 out/
 test_outputs/
 
 # Third-party installs and regenerable benchmark run output (ground truth is kept)
 node_modules/
 .runs/
+# Keep large upstream security datasets out of Git. The sync command and the
+# source manifest document each download, what was retrieved, and when.
+.intel/
 
 # Independent nested repository with its own history: kept local only
 demo_attack_sim/
