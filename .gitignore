@@ -1,0 +1,37 @@
+# Virtual environments and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+
+# Runtime state and generated output (regenerable; they embed local paths)
+.runtime/
+.freebuff/
+scan_workspace/
+scan_workspace_*/
+out/
+test_outputs/
+
+# Third-party installs and regenerable benchmark run output (ground truth is kept)
+node_modules/
+.runs/
+
+# Independent nested repository with its own history: kept local only
+demo_attack_sim/
+
+# Secrets: never commit keys, tokens or env files
+.env
+.env.*
+!.env.example
+*.token
+api.token
+node.token
+*.key
+*.pem
+render-api-key*
+
+# OS noise
+Thumbs.db
+.DS_Store

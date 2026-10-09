@@ -1,0 +1,2 @@
+--extra-index-url https://pypi.internal.example.invalid/simple
+acme-internal-auth==1.4.0

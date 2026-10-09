@@ -1,0 +1,58 @@
+{
+  "case_id": "CB-LOCK-006",
+  "category": "lockfile_mismatch",
+  "ecosystem": [
+    "PyPI"
+  ],
+  "description": "Lock entry with an empty version string.",
+  "fixture_path": "cases/lockfile_mismatch/CB-LOCK-006/repo",
+  "pins": [],
+  "imports": [],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [],
+    "reachable": [],
+    "unreachable": [],
+    "undetermined": [],
+    "suspicious_packages": [],
+    "checked_packages": [],
+    "dependency_disclosures": [
+      {
+        "name": "pyyaml",
+        "allowed_reasons": [
+          "non_concrete_version"
+        ]
+      }
+    ],
+    "expected_verdict": "CLEAN",
+    "expected_exit_code": 0
+  },
+  "expected_verdict": "CLEAN",
+  "expected_exit_code": 0,
+  "expected_evidence": [
+    "pyyaml: disclosed as one of ['non_concrete_version'] in unresolved_dependencies"
+  ],
+  "dependency_disclosures": [
+    {
+      "name": "pyyaml",
+      "allowed_reasons": [
+        "non_concrete_version"
+      ]
+    }
+  ],
+  "rationale": "An empty lock version cannot be analysed.",
+  "call_path": "",
+  "supported": true,
+  "engine_boundary": null,
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": false,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

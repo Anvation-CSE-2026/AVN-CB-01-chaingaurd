@@ -1,0 +1,98 @@
+/* ChainGuard design tokens.
+ *
+ * Direction: a cool blue-slate instrument panel, not a black canvas. Colour is
+ * semantic and reserved: severity hues appear only on severity, green only on a
+ * verified healthy state the engine actually asserted, cyan only on system
+ * information. Everything else is monochrome so the eye lands on risk.
+ *
+ * This file is the single source of truth for every value used by the UI.
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* ---- surfaces: blue-slate ink -------------------------------------- */
+  --ink-950: #0b0f14;   /* page */
+  --ink-900: #0e141a;   /* rail, topbar */
+  --ink-850: #111820;   /* panel */
+  --ink-800: #151d26;   /* raised panel, table head */
+  --ink-750: #1a2430;   /* row hover */
+  --ink-700: #202c39;   /* control */
+  --line: #24313f;      /* hairline */
+  --line-soft: #1b2530; /* interior rule */
+
+  /* ---- text ---------------------------------------------------------- */
+  --text-0: #e8eff6;    /* headings, figures */
+  --text-1: #b7c5d3;    /* body */
+  --text-2: #8a9aa9;    /* secondary (>= 4.5:1 on panel) */
+  --text-3: #6b7c8c;    /* disabled / decorative only */
+
+  /* ---- accents ------------------------------------------------------- */
+  --beam: #4fb3e8;      /* system information, links, focus */
+  --beam-ink: #0d2534;
+  --ok: #4cc46a;        /* verified not affected / healthy */
+  --ok-ink: #122c1c;
+  --warn: #e0a32e;
+
+  /* ---- severity (only for severity) ---------------------------------- */
+  --sev-critical: #f2555a;
+  --sev-critical-ink: #33121a;
+  --sev-high: #f08c46;
+  --sev-high-ink: #331f10;
+  --sev-medium: #d9b24c;
+  --sev-medium-ink: #2e2712;
+  --sev-low: #8fa3b6;
+  --sev-low-ink: #1c242e;
+  --sev-unknown: #6b7c8c;
+  --sev-unknown-ink: #1a2129;
+
+  /* ---- evidence chain ------------------------------------------------ */
+  --rail-line: #2b3a4a;
+  --rail-node: #1d2a37;
+  --rail-break: #f2555a;
+
+  /* ---- typography ---------------------------------------------------- */
+  --font-ui: "Inter var", "Inter", "Segoe UI Variable Text", "Segoe UI",
+             system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-data: ui-monospace, "Cascadia Mono", "SF Mono", "JetBrains Mono",
+               "Fira Code", Consolas, "Liberation Mono", monospace;
+  --fs-micro: 11.5px;
+  --fs-small: 12.5px;
+  --fs-base: 13.5px;
+  --fs-md: 15px;
+  --fs-lg: 18px;
+  --fs-xl: 23px;
+  --fs-2xl: 30px;
+  --fs-3xl: 44px;
+  --lh-tight: 1.2;
+  --lh-body: 1.5;
+  --measure: 74ch;
+
+  /* ---- space, radius, elevation -------------------------------------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --r-1: 4px;
+  --r-2: 6px;
+  --r-3: 10px;
+  --overlay-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
+
+  /* ---- motion (user-triggered only) ---------------------------------- */
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ---- shell metrics ------------------------------------------------- */
+  --rail-w: 214px;
+  --rail-w-collapsed: 60px;
+  --topbar-h: 54px;
+  --row-h: 30px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-1: 0ms; --dur-2: 0ms; }
+}

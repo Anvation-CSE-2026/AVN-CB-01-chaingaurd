@@ -1,0 +1,69 @@
+{
+  "case_id": "CB-DC-001",
+  "category": "dependency_confusion",
+  "ecosystem": [
+    "PyPI"
+  ],
+  "description": "Internal name plus --extra-index-url override.",
+  "fixture_path": "cases/dependency_confusion/CB-DC-001/repo",
+  "pins": [
+    {
+      "ecosystem": "PyPI",
+      "name": "acme-internal-auth",
+      "version": "1.4.0"
+    }
+  ],
+  "imports": [],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [],
+    "reachable": [],
+    "unreachable": [],
+    "undetermined": [],
+    "suspicious_packages": [
+      "acme-internal-auth"
+    ],
+    "checked_packages": [
+      "PyPI|acme-internal-auth"
+    ],
+    "dependency_disclosures": [
+      {
+        "name": "--extra-index-url",
+        "allowed_reasons": [
+          "index_override_option"
+        ]
+      }
+    ],
+    "expected_verdict": "SUSPICIOUS",
+    "expected_exit_code": 1
+  },
+  "expected_verdict": "SUSPICIOUS",
+  "expected_exit_code": 1,
+  "expected_evidence": [
+    "acme-internal-auth: suspicious with a 'package not found in registry' reason",
+    "--extra-index-url: disclosed as one of ['index_override_option'] in unresolved_dependencies"
+  ],
+  "dependency_disclosures": [
+    {
+      "name": "--extra-index-url",
+      "allowed_reasons": [
+        "index_override_option"
+      ]
+    }
+  ],
+  "rationale": "Index override is the classic confusion precondition; it must be disclosed.",
+  "call_path": "",
+  "supported": true,
+  "engine_boundary": null,
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

@@ -1,0 +1,16 @@
+name: ChainGuard MVP example
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Run ChainGuard MVP
+        uses: ./
+        with:
+          path: .

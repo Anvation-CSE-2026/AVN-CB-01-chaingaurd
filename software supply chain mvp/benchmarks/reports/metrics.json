@@ -1,0 +1,257 @@
+{
+  "corpus": "ChainBench-100",
+  "cases_total": 107,
+  "cases_evaluated": 101,
+  "status_counts": {
+    "PASS": 77,
+    "PARTIAL": 0,
+    "FAIL": 24,
+    "ERROR": 0,
+    "UNSUPPORTED": 6
+  },
+  "overall_pass_accuracy": 0.7624,
+  "overall_label_accuracy": 0.7624,
+  "vulnerability_detection": {
+    "tp": 293,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "reachability": {
+    "tp": 40,
+    "fp": 18,
+    "fn": 10,
+    "precision": 0.6897,
+    "recall": 0.8,
+    "f1": 0.7407,
+    "tn": 203
+  },
+  "reachability_excluding_boundary": {
+    "tp": 40,
+    "fp": 18,
+    "fn": 7,
+    "precision": 0.6897,
+    "recall": 0.8511,
+    "f1": 0.7619,
+    "tn": 200
+  },
+  "reachability_engine_boundary_only": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 3,
+    "precision": null,
+    "recall": 0.0,
+    "f1": null,
+    "tn": 3
+  },
+  "noise_reduction": {
+    "raw_findings_actual": 293,
+    "actionable_actual": 68,
+    "dismissed_actual": 225,
+    "noise_reduction_percent_actual": 76.7918,
+    "raw_findings_truth": 293,
+    "actionable_truth": 72,
+    "noise_reduction_percent_truth": 75.4266
+  },
+  "suspicious_package": {
+    "tp": 26,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "accuracy": 1.0,
+    "tn": 87
+  },
+  "dependency_disclosure": {
+    "cases_correct": 89,
+    "cases_supported": 101,
+    "case_accuracy": 0.8812,
+    "expected_items": 28,
+    "matched_items": 16,
+    "item_recall": 0.5714,
+    "unexpected_items": 0
+  },
+  "evidence": {
+    "items": 279,
+    "complete": 276,
+    "completeness": 0.9892
+  },
+  "execution": {
+    "case_execution_success": 1.0,
+    "artifact_generation_success": 1.0,
+    "exit_code_correctness": 0.9111,
+    "exit_code_asserted_cases": 90,
+    "runs": 107,
+    "average_scan_seconds": 1.8801,
+    "median_scan_seconds": 1.495,
+    "p95_scan_seconds": 2.755,
+    "total_scan_seconds": 201.173
+  },
+  "per_category": {
+    "clean": {
+      "cases": 11,
+      "evaluated": 11,
+      "status": {
+        "PASS": 11,
+        "PARTIAL": 0,
+        "FAIL": 0,
+        "ERROR": 0,
+        "UNSUPPORTED": 0
+      },
+      "pass_accuracy": 1.0,
+      "label_accuracy": 1.0
+    },
+    "dependency_confusion": {
+      "cases": 7,
+      "evaluated": 7,
+      "status": {
+        "PASS": 4,
+        "PARTIAL": 0,
+        "FAIL": 3,
+        "ERROR": 0,
+        "UNSUPPORTED": 0
+      },
+      "pass_accuracy": 0.5714,
+      "label_accuracy": 0.5714
+    },
+    "lockfile_mismatch": {
+      "cases": 8,
+      "evaluated": 8,
+      "status": {
+        "PASS": 4,
+        "PARTIAL": 0,
+        "FAIL": 4,
+        "ERROR": 0,
+        "UNSUPPORTED": 0
+      },
+      "pass_accuracy": 0.5,
+      "label_accuracy": 0.5
+    },
+    "mixed": {
+      "cases": 8,
+      "evaluated": 8,
+      "status": {
+        "PASS": 3,
+        "PARTIAL": 0,
+        "FAIL": 5,
+        "ERROR": 0,
+        "UNSUPPORTED": 0
+      },
+      "pass_accuracy": 0.375,
+      "label_accuracy": 0.375
+    },
+    "reachable": {
+      "cases": 13,
+      "evaluated": 13,
+      "status": {
+        "PASS": 8,
+        "PARTIAL": 0,
+        "FAIL": 5,
+        "ERROR": 0,
+        "UNSUPPORTED": 0
+      },
+      "pass_accuracy": 0.6154,
+      "label_accuracy": 0.6154
+    },
+    "slopsquatting": {
+      "cases": 10,
+      "evaluated": 10,
+      "status": {
+        "PASS": 10,
+        "PARTIAL": 0,
+        "FAIL": 0,
+        "ERROR": 0,
+        "UNSUPPORTED": 0
+      },
+      "pass_accuracy": 1.0,
+      "label_accuracy": 1.0
+    },
+    "suspicious": {
+      "cases": 8,
+      "evaluated": 8,
+      "status": {
+        "PASS": 8,
+        "PARTIAL": 0,
+        "FAIL": 0,
+        "ERROR": 0,
+        "UNSUPPORTED": 0
+      },
+      "pass_accuracy": 1.0,
+      "label_accuracy": 1.0
+    },
+    "unpinned": {
+      "cases": 12,
+      "evaluated": 12,
+      "status": {
+        "PASS": 10,
+        "PARTIAL": 0,
+        "FAIL": 2,
+        "ERROR": 0,
+        "UNSUPPORTED": 0
+      },
+      "pass_accuracy": 0.8333,
+      "label_accuracy": 0.8333
+    },
+    "unreachable": {
+      "cases": 13,
+      "evaluated": 13,
+      "status": {
+        "PASS": 8,
+        "PARTIAL": 0,
+        "FAIL": 5,
+        "ERROR": 0,
+        "UNSUPPORTED": 0
+      },
+      "pass_accuracy": 0.6154,
+      "label_accuracy": 0.6154
+    },
+    "unsupported": {
+      "cases": 6,
+      "evaluated": 0,
+      "status": {
+        "PASS": 0,
+        "PARTIAL": 0,
+        "FAIL": 0,
+        "ERROR": 0,
+        "UNSUPPORTED": 6
+      },
+      "pass_accuracy": null,
+      "label_accuracy": null
+    },
+    "vulnerable": {
+      "cases": 11,
+      "evaluated": 11,
+      "status": {
+        "PASS": 11,
+        "PARTIAL": 0,
+        "FAIL": 0,
+        "ERROR": 0,
+        "UNSUPPORTED": 0
+      },
+      "pass_accuracy": 1.0,
+      "label_accuracy": 1.0
+    }
+  },
+  "baseline": {
+    "status": "PASS",
+    "exit_code": 0,
+    "observed": {
+      "total_vulnerabilities": 30,
+      "dismissed_unreachable": 26,
+      "actionable": 4,
+      "suspicious_packages": 1,
+      "noise_reduced_percent": 86.7
+    },
+    "expected": {
+      "total_vulnerabilities": 30,
+      "dismissed_unreachable": 26,
+      "actionable": 4,
+      "suspicious_packages": 1,
+      "noise_reduced_percent": 86.7
+    },
+    "output_dir": "benchmarks/.runs/_baseline_test_project"
+  }
+}

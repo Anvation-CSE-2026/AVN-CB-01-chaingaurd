@@ -1,0 +1,226 @@
+{
+  "case_id": "CB-UNSUP-002",
+  "category": "unsupported",
+  "ecosystem": [
+    "npm"
+  ],
+  "description": "package-lock.json as the only npm inventory.",
+  "fixture_path": "cases/unsupported/CB-UNSUP-002/repo",
+  "pins": [
+    {
+      "ecosystem": "npm",
+      "name": "lodash",
+      "version": "4.17.15"
+    }
+  ],
+  "imports": [],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [
+      {
+        "id": "GHSA-29mw-wpgm-hmr9",
+        "aliases": [
+          "CVE-2020-28500"
+        ],
+        "ecosystem": "npm",
+        "package": "lodash",
+        "version": "4.17.15",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [
+          "toNumber",
+          "trim",
+          "trimEnd"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-29mw-wpgm-hmr9"
+      },
+      {
+        "id": "GHSA-35jh-r3h4-6jhm",
+        "aliases": [
+          "CVE-2021-23337",
+          "CVE-2026-4800",
+          "GHSA-r5fr-rjxr-66jc"
+        ],
+        "ecosystem": "npm",
+        "package": "lodash",
+        "version": "4.17.15",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [
+          "template"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-35jh-r3h4-6jhm"
+      },
+      {
+        "id": "GHSA-f23m-r3pf-42rh",
+        "aliases": [
+          "CVE-2025-13465",
+          "CVE-2026-2950",
+          "GHSA-xxjr-mmjv-4gpg"
+        ],
+        "ecosystem": "npm",
+        "package": "lodash",
+        "version": "4.17.15",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [
+          "unset",
+          "omit"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-f23m-r3pf-42rh"
+      },
+      {
+        "id": "GHSA-p6mc-m468-83gw",
+        "aliases": [
+          "CVE-2020-8203"
+        ],
+        "ecosystem": "npm",
+        "package": "lodash",
+        "version": "4.17.15",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [
+          "pick",
+          "set",
+          "setWith",
+          "update",
+          "updateWith",
+          "zipObjectDeep"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-p6mc-m468-83gw"
+      },
+      {
+        "id": "GHSA-r5fr-rjxr-66jc",
+        "aliases": [
+          "CVE-2021-23337",
+          "CVE-2026-4800",
+          "GHSA-35jh-r3h4-6jhm"
+        ],
+        "ecosystem": "npm",
+        "package": "lodash",
+        "version": "4.17.15",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [
+          "template"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-r5fr-rjxr-66jc"
+      },
+      {
+        "id": "GHSA-xxjr-mmjv-4gpg",
+        "aliases": [
+          "CVE-2025-13465",
+          "CVE-2026-2950",
+          "GHSA-f23m-r3pf-42rh"
+        ],
+        "ecosystem": "npm",
+        "package": "lodash",
+        "version": "4.17.15",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [
+          "unset",
+          "omit"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-xxjr-mmjv-4gpg"
+      }
+    ],
+    "reachable": [],
+    "unreachable": [
+      {
+        "id": "GHSA-29mw-wpgm-hmr9",
+        "package": "lodash",
+        "version": "4.17.15",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "GHSA-35jh-r3h4-6jhm",
+        "package": "lodash",
+        "version": "4.17.15",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "GHSA-f23m-r3pf-42rh",
+        "package": "lodash",
+        "version": "4.17.15",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "GHSA-p6mc-m468-83gw",
+        "package": "lodash",
+        "version": "4.17.15",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "GHSA-r5fr-rjxr-66jc",
+        "package": "lodash",
+        "version": "4.17.15",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "GHSA-xxjr-mmjv-4gpg",
+        "package": "lodash",
+        "version": "4.17.15",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      }
+    ],
+    "undetermined": [],
+    "suspicious_packages": [],
+    "checked_packages": [
+      "npm|lodash"
+    ],
+    "dependency_disclosures": [],
+    "expected_verdict": "DISMISSED",
+    "expected_exit_code": 0
+  },
+  "expected_verdict": "DISMISSED",
+  "expected_exit_code": 0,
+  "expected_evidence": [
+    "GHSA-29mw-wpgm-hmr9 (lodash@4.17.15): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "GHSA-35jh-r3h4-6jhm (lodash@4.17.15): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "GHSA-f23m-r3pf-42rh (lodash@4.17.15): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "GHSA-p6mc-m468-83gw (lodash@4.17.15): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "GHSA-r5fr-rjxr-66jc (lodash@4.17.15): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "GHSA-xxjr-mmjv-4gpg (lodash@4.17.15): no import evidence; status not_affected (vulnerable_code_not_present)"
+  ],
+  "dependency_disclosures": [],
+  "rationale": "package-lock.json is not in the supported set; the engine sees nothing.",
+  "call_path": "",
+  "supported": false,
+  "engine_boundary": null,
+  "assert_reachability": false,
+  "assert_verdict": false,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

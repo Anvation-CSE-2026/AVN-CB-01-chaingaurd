@@ -1,0 +1,211 @@
+{
+  "case_id": "CB-MIX-004",
+  "category": "mixed",
+  "ecosystem": [
+    "PyPI"
+  ],
+  "description": "Index override, ghost, and a dead-code call in one project.",
+  "fixture_path": "cases/mixed/CB-MIX-004/repo",
+  "pins": [
+    {
+      "ecosystem": "PyPI",
+      "name": "acme-internal-auth",
+      "version": "1.4.0"
+    },
+    {
+      "ecosystem": "PyPI",
+      "name": "pyyaml",
+      "version": "5.3"
+    }
+  ],
+  "imports": [
+    "pyyaml"
+  ],
+  "calls": {},
+  "dead_calls": {
+    "pyyaml": [
+      "yaml.full_load"
+    ]
+  },
+  "ground_truth": {
+    "vulnerabilities": [
+      {
+        "id": "GHSA-6757-jp84-gxfx",
+        "aliases": [
+          "CVE-2020-1747",
+          "PYSEC-2020-96"
+        ],
+        "ecosystem": "PyPI",
+        "package": "pyyaml",
+        "version": "5.3",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_in_execute_path",
+        "advisory_functions": [
+          "yaml.full_load",
+          "yaml.load"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [
+          "yaml.full_load"
+        ],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-6757-jp84-gxfx"
+      },
+      {
+        "id": "GHSA-8q59-q68h-6hv4",
+        "aliases": [
+          "CVE-2020-14343",
+          "PYSEC-2021-142"
+        ],
+        "ecosystem": "PyPI",
+        "package": "pyyaml",
+        "version": "5.3",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_in_execute_path",
+        "advisory_functions": [
+          "yaml.full_load",
+          "yaml.load"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [
+          "yaml.full_load"
+        ],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-8q59-q68h-6hv4"
+      },
+      {
+        "id": "PYSEC-2020-96",
+        "aliases": [
+          "CVE-2020-1747",
+          "GHSA-6757-jp84-gxfx"
+        ],
+        "ecosystem": "PyPI",
+        "package": "pyyaml",
+        "version": "5.3",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_in_execute_path",
+        "advisory_functions": [
+          "yaml.full_load",
+          "yaml.load"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [
+          "yaml.full_load"
+        ],
+        "source": "https://api.osv.dev/v1/vulns/PYSEC-2020-96"
+      },
+      {
+        "id": "PYSEC-2021-142",
+        "aliases": [
+          "CVE-2020-14343",
+          "GHSA-8q59-q68h-6hv4"
+        ],
+        "ecosystem": "PyPI",
+        "package": "pyyaml",
+        "version": "5.3",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_in_execute_path",
+        "advisory_functions": [
+          "yaml.full_load",
+          "yaml.load"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [
+          "yaml.full_load"
+        ],
+        "source": "https://api.osv.dev/v1/vulns/PYSEC-2021-142"
+      }
+    ],
+    "reachable": [],
+    "unreachable": [
+      {
+        "id": "GHSA-6757-jp84-gxfx",
+        "package": "pyyaml",
+        "version": "5.3",
+        "reason": "vulnerable_code_not_in_execute_path",
+        "dead_code_functions": [
+          "yaml.full_load"
+        ]
+      },
+      {
+        "id": "GHSA-8q59-q68h-6hv4",
+        "package": "pyyaml",
+        "version": "5.3",
+        "reason": "vulnerable_code_not_in_execute_path",
+        "dead_code_functions": [
+          "yaml.full_load"
+        ]
+      },
+      {
+        "id": "PYSEC-2020-96",
+        "package": "pyyaml",
+        "version": "5.3",
+        "reason": "vulnerable_code_not_in_execute_path",
+        "dead_code_functions": [
+          "yaml.full_load"
+        ]
+      },
+      {
+        "id": "PYSEC-2021-142",
+        "package": "pyyaml",
+        "version": "5.3",
+        "reason": "vulnerable_code_not_in_execute_path",
+        "dead_code_functions": [
+          "yaml.full_load"
+        ]
+      }
+    ],
+    "undetermined": [],
+    "suspicious_packages": [
+      "acme-internal-auth"
+    ],
+    "checked_packages": [
+      "PyPI|acme-internal-auth",
+      "PyPI|pyyaml"
+    ],
+    "dependency_disclosures": [
+      {
+        "name": "--extra-index-url",
+        "allowed_reasons": [
+          "index_override_option"
+        ]
+      }
+    ],
+    "expected_verdict": "DISMISSED+SUSPICIOUS",
+    "expected_exit_code": 1
+  },
+  "expected_verdict": "DISMISSED+SUSPICIOUS",
+  "expected_exit_code": 1,
+  "expected_evidence": [
+    "GHSA-6757-jp84-gxfx (pyyaml@5.3): import evidence with no vulnerable call; status not_affected (vulnerable_code_not_in_execute_path)",
+    "GHSA-8q59-q68h-6hv4 (pyyaml@5.3): import evidence with no vulnerable call; status not_affected (vulnerable_code_not_in_execute_path)",
+    "PYSEC-2020-96 (pyyaml@5.3): import evidence with no vulnerable call; status not_affected (vulnerable_code_not_in_execute_path)",
+    "PYSEC-2021-142 (pyyaml@5.3): import evidence with no vulnerable call; status not_affected (vulnerable_code_not_in_execute_path)",
+    "acme-internal-auth: suspicious with a 'package not found in registry' reason",
+    "--extra-index-url: disclosed as one of ['index_override_option'] in unresolved_dependencies"
+  ],
+  "dependency_disclosures": [
+    {
+      "name": "--extra-index-url",
+      "allowed_reasons": [
+        "index_override_option"
+      ]
+    }
+  ],
+  "rationale": "Dead-code call must not be actionable; the ghost and the override are separate findings.",
+  "call_path": "",
+  "supported": true,
+  "engine_boundary": null,
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

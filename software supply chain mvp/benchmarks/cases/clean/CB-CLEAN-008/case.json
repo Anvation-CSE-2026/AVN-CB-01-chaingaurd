@@ -1,0 +1,52 @@
+{
+  "case_id": "CB-CLEAN-008",
+  "category": "clean",
+  "ecosystem": [
+    "PyPI"
+  ],
+  "description": "Vulnerable requests in venv/ must be skipped by discovery.",
+  "fixture_path": "cases/clean/CB-CLEAN-008/repo",
+  "pins": [
+    {
+      "ecosystem": "PyPI",
+      "name": "pyyaml",
+      "version": "6.0.1"
+    }
+  ],
+  "imports": [
+    "pyyaml"
+  ],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [],
+    "reachable": [],
+    "unreachable": [],
+    "undetermined": [],
+    "suspicious_packages": [],
+    "checked_packages": [
+      "PyPI|pyyaml"
+    ],
+    "dependency_disclosures": [],
+    "expected_verdict": "CLEAN",
+    "expected_exit_code": 0
+  },
+  "expected_verdict": "CLEAN",
+  "expected_exit_code": 0,
+  "expected_evidence": [],
+  "dependency_disclosures": [],
+  "rationale": "venv/ is an environment directory, not a project manifest.",
+  "call_path": "",
+  "supported": true,
+  "engine_boundary": null,
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

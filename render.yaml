@@ -1,0 +1,38 @@
+# Render blueprint for the existing ChainGuard API (+ dashboard at /ui).
+#
+# The Mac worker is NOT part of this deployment: remote execution is disabled
+# and no node URL is set, so the public service never contacts a node.
+#
+# Create the secret in the Render dashboard (never commit it):
+#   CHAIN_GUARD_API_TOKEN  -> a long random string; the operator types it into
+#                            Settings in the dashboard.
+services:
+  - type: web
+    name: chainguard
+    runtime: python
+    plan: starter
+    region: oregon
+    buildCommand: pip install -r chainguard_api/requirements.txt
+    startCommand: uvicorn chainguard_api.app:app --host 0.0.0.0 --port $PORT --proxy-headers
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: CHAIN_GUARD_API_TOKEN
+        sync: false
+      # Repositories may only be scanned from inside this directory. The repo
+      # checkout is the only place the engine and the sample project live.
+      - key: CHAIN_GUARD_ALLOWED_ROOT
+        value: /opt/render/project/src
+      - key: CHAIN_GUARD_EXECUTION_MODE
+        value: local
+      - key: CHAIN_GUARD_REMOTE_ENABLED
+        value: "false"
+      - key: CHAIN_GUARD_NO_LLM
+        value: "true"
+      - key: MAX_CONCURRENT_SCANS
+        value: "2"
+      - key: SCAN_TIMEOUT_SECONDS
+        value: "300"
+      - key: CHAIN_GUARD_MAX_REQUEST_BYTES
+        value: "65536"

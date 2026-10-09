@@ -1,0 +1,32 @@
+# CB-UNPIN-005 (unpinned)
+
+CONTROL: arbitrary-equality pin requests===2.19.0 is exact.
+
+- **Expected verdict:** `DISMISSED` (exit `0`)
+- **Supported by engine:** True
+- **Engine boundary probed:** none
+
+## Rationale
+
+=== is an exact pin and must be analysed, not disclosed as ranged.
+
+## Ground-truth advisories
+
+| advisory | package | version | label | expected status |
+|---|---|---|---|---|
+| GHSA-9hjg-9r4m-mvj7 | requests | 2.19.0 | UNREACHABLE | not_affected |
+| GHSA-9wx4-h78v-vm56 | requests | 2.19.0 | UNREACHABLE | not_affected |
+| GHSA-gc5v-m9x4-r6x2 | requests | 2.19.0 | UNREACHABLE | not_affected |
+| GHSA-j8r2-6x86-q33q | requests | 2.19.0 | UNREACHABLE | not_affected |
+| GHSA-x84v-xcm2-53pg | requests | 2.19.0 | UNREACHABLE | not_affected |
+| PYSEC-2018-28 | requests | 2.19.0 | UNREACHABLE | not_affected |
+| PYSEC-2023-74 | requests | 2.19.0 | UNREACHABLE | not_affected |
+| PYSEC-2026-1872 | requests | 2.19.0 | UNREACHABLE | not_affected |
+| PYSEC-2026-1873 | requests | 2.19.0 | UNREACHABLE | not_affected |
+| PYSEC-2026-2275 | requests | 2.19.0 | UNREACHABLE | not_affected |
+
+## Reproduce
+
+```sh
+python benchmarks/runner/run_benchmark.py --case CB-UNPIN-005
+```

@@ -1,0 +1,674 @@
+{
+  "generated_utc": "2026-10-08T22:25:59.003356Z",
+  "osv_advisories": {
+    "GHSA-29mw-wpgm-hmr9": {
+      "aliases": [
+        "CVE-2020-28500"
+      ],
+      "details": "All versions of package lodash prior to 4.17.21 are vulnerable to Regular Expression Denial of Service (ReDoS) via the `toNumber`, `trim` and `trimEnd` functions. \n\nSteps to reproduce (provided by reporter Liyuan Chen):\n```js\nvar lo = require('lodash');\n\nfunction build_blank(n) {\n    var ret = \"1\"\n    for (var i = 0; i < n; i++) {\n        ret += \" \"\n    }\n    return ret + \"1\";\n}\nvar s = build_blank(50000) var time0 = Date.now();\nlo.trim(s) \nvar time_cost0 = Date.now() - time0;\nconsole.log(\"time_cost0: \" + time_cost0);\nvar time1 = Date.now();\nlo.toNumber(s) var time_cost1 = Date.now() - time1;\nconsole.log(\"time_cost1: \" + time_cost1);\nvar time2 = Date.now();\nlo.trimEnd(s);\nvar time_cost2 = Date.now() - time2;\nconsole.log(\"time_cost2: \" + time_cost2);\n```",
+      "id": "GHSA-29mw-wpgm-hmr9",
+      "modified": "2025-09-29T21:12:31.102523Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-29mw-wpgm-hmr9",
+      "summary": "Regular Expression Denial of Service (ReDoS) in lodash"
+    },
+    "GHSA-35jh-r3h4-6jhm": {
+      "aliases": [
+        "CVE-2021-23337",
+        "CVE-2026-4800",
+        "GHSA-r5fr-rjxr-66jc"
+      ],
+      "details": "`lodash` versions prior to 4.17.21 are vulnerable to Command Injection via the template function.",
+      "id": "GHSA-35jh-r3h4-6jhm",
+      "modified": "2026-09-10T03:49:04.067984836Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-35jh-r3h4-6jhm",
+      "summary": "Command Injection in lodash"
+    },
+    "GHSA-562c-5r94-xh97": {
+      "aliases": [
+        "CVE-2018-1000656",
+        "PYSEC-2018-66"
+      ],
+      "details": "The Pallets Project flask version Before 0.12.3 contains a CWE-20: Improper Input Validation vulnerability in flask that can result in Large amount of memory usage possibly leading to denial of service. This attack appear to be exploitable via Attacker provides JSON data in incorrect encoding. This vulnerability appears to have been fixed in 0.12.3.",
+      "id": "GHSA-562c-5r94-xh97",
+      "modified": "2025-02-21T05:29:40.872529Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-562c-5r94-xh97",
+      "summary": "Flask is vulnerable to Denial of Service via incorrect encoding of JSON data"
+    },
+    "GHSA-5mg8-w23w-74h3": {
+      "aliases": [
+        "CVE-2020-8908",
+        "SNYK-JAVA-COMGOOGLEGUAVA-1015415"
+      ],
+      "details": "A temp directory creation vulnerability exists in Guava prior to version 32.0.0 allowing an attacker with access to the machine to potentially access data in a temporary directory created by the Guava `com.google.common.io.Files.createTempDir()`. The permissions granted to the directory created default to the standard unix-like /tmp ones, leaving the files open. Maintainers recommend explicitly changing the permissions after the creation of the directory, or removing uses of the vulnerable method.",
+      "id": "GHSA-5mg8-w23w-74h3",
+      "modified": "2026-09-10T03:49:26.651391253Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-5mg8-w23w-74h3",
+      "summary": "Information Disclosure in Guava"
+    },
+    "GHSA-5wv5-4vpf-pj6m": {
+      "aliases": [
+        "CVE-2019-1010083",
+        "PYSEC-2019-179"
+      ],
+      "details": "The Pallets Project Flask before 1.0 is affected by unexpected memory usage. The impact is denial of service. The attack vector is crafted encoded JSON data. The fixed version is 1. NOTE this may overlap CVE-2018-1000656.",
+      "id": "GHSA-5wv5-4vpf-pj6m",
+      "modified": "2024-09-20T21:24:25.140560Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-5wv5-4vpf-pj6m",
+      "summary": "Pallets Project Flask is vulnerable to Denial of Service via Unexpected memory usage"
+    },
+    "GHSA-6757-jp84-gxfx": {
+      "aliases": [
+        "CVE-2020-1747",
+        "PYSEC-2020-96"
+      ],
+      "details": "A vulnerability was discovered in the PyYAML library in versions before 5.3.1, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. An attacker could use this flaw to execute arbitrary code on the system by abusing the python/object/new constructor.",
+      "id": "GHSA-6757-jp84-gxfx",
+      "modified": "2026-05-04T08:57:14.897560893Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-6757-jp84-gxfx",
+      "summary": "Improper Input Validation in PyYAML"
+    },
+    "GHSA-68rp-wp8r-4726": {
+      "aliases": [
+        "CVE-2026-27205",
+        "PYSEC-2026-2151"
+      ],
+      "details": "When the `session` object is accessed, Flask should set the `Vary: Cookie` header. This instructs caches not to cache the response, as it may contain information specific to a logged in user. This is handled in most cases, but some forms of access such as the Python `in` operator were overlooked.\n\nThe severity depends on the application's use of the session, and the cache's behavior regarding cookies. The risk depends on all these conditions being met.\n\n1. The application must be hosted behind a caching proxy that does not ignore responses with cookies.\n2. The application does not set a `Cache-Control` header to indicate that a page is private or should not be cached.\n3. The application accesses the session in a way that does not access the values, only the keys, and does not mutate the session.",
+      "id": "GHSA-68rp-wp8r-4726",
+      "modified": "2026-09-10T03:49:54.354981590Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-68rp-wp8r-4726",
+      "summary": "Flask session does not add `Vary: Cookie` header when accessed in some ways"
+    },
+    "GHSA-7g45-4rm6-3mm3": {
+      "aliases": [
+        "CVE-2023-2976"
+      ],
+      "details": "Use of Java's default temporary directory for file creation in `FileBackedOutputStream` in Google Guava versions 1.0 to 31.1 on Unix systems and Android Ice Cream Sandwich allows other users and apps on the machine with access to the default Java temporary directory to be able to access the files created by the class.\n\nEven though the security vulnerability is fixed in version 32.0.0, maintainers recommend using version 32.0.1 as version 32.0.0 breaks some functionality under Windows.",
+      "id": "GHSA-7g45-4rm6-3mm3",
+      "modified": "2026-09-10T03:49:53.859811124Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-7g45-4rm6-3mm3",
+      "summary": "Guava vulnerable to insecure use of temporary directory"
+    },
+    "GHSA-8q59-q68h-6hv4": {
+      "aliases": [
+        "CVE-2020-14343",
+        "PYSEC-2021-142"
+      ],
+      "details": "A vulnerability was discovered in the PyYAML library in versions before 5.4, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. This flaw allows an attacker to execute arbitrary code on the system by abusing the python/object/new constructor. This flaw is due to an incomplete fix for CVE-2020-1747.",
+      "id": "GHSA-8q59-q68h-6hv4",
+      "modified": "2026-02-04T03:33:10.792778Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-8q59-q68h-6hv4",
+      "summary": "Improper Input Validation in PyYAML"
+    },
+    "GHSA-9hjg-9r4m-mvj7": {
+      "aliases": [
+        "CVE-2024-47081",
+        "PYSEC-2026-1872"
+      ],
+      "details": "### Impact\n\nDue to a URL parsing issue, Requests releases prior to 2.32.4 may leak .netrc credentials to third parties for specific maliciously-crafted URLs.\n\n### Workarounds\nFor older versions of Requests, use of the .netrc file can be disabled with `trust_env=False` on your Requests Session ([docs](https://requests.readthedocs.io/en/latest/api/#requests.Session.trust_env)).\n\n### References\nhttps://github.com/psf/requests/pull/6965\nhttps://seclists.org/fulldisclosure/2025/Jun/2",
+      "id": "GHSA-9hjg-9r4m-mvj7",
+      "modified": "2026-09-10T03:50:25.139398550Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-9hjg-9r4m-mvj7",
+      "summary": "Requests vulnerable to .netrc credentials leak via malicious URLs"
+    },
+    "GHSA-9wx4-h78v-vm56": {
+      "aliases": [
+        "CVE-2024-35195",
+        "PYSEC-2026-1873"
+      ],
+      "details": "When using a `requests.Session`, if the first request to a given origin is made with `verify=False`, TLS certificate verification may remain disabled for all subsequent requests to that origin, even if `verify=True` is explicitly specified later.\n\nThis occurs because the underlying connection is reused from the session's connection pool, causing the initial TLS verification setting to persist for the lifetime of the pooled connection. As a result, applications may unintentionally send requests without certificate verification, leading to potential man-in-the-middle attacks and compromised confidentiality or integrity.\n\nThis behavior affects versions of `requests` prior to 2.32.0.",
+      "id": "GHSA-9wx4-h78v-vm56",
+      "modified": "2026-09-10T03:50:13.740879755Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-9wx4-h78v-vm56",
+      "summary": "Requests `Session` object does not verify requests after making first request with verify=False"
+    },
+    "GHSA-f23m-r3pf-42rh": {
+      "aliases": [
+        "CVE-2025-13465",
+        "CVE-2026-2950",
+        "GHSA-xxjr-mmjv-4gpg"
+      ],
+      "details": "### Impact\n\nLodash versions 4.17.23 and earlier are vulnerable to prototype pollution in the `_.unset` and `_.omit` functions. The fix for [CVE-2025-13465](https://github.com/lodash/lodash/security/advisories/GHSA-xxjr-mmjv-4gpg) only guards against string key members, so an attacker can bypass the check by passing array-wrapped path segments. This allows deletion of properties from built-in prototypes such as `Object.prototype`, `Number.prototype`, and `String.prototype`.\n\nThe issue permits deletion of prototype properties but does not allow overwriting their original behavior.\n\n### Patches\n\nThis issue is patched in 4.18.0.\n\n### Workarounds\n\nNone. Upgrade to the patched version.",
+      "id": "GHSA-f23m-r3pf-42rh",
+      "modified": "2026-09-10T03:50:44.050013812Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-f23m-r3pf-42rh",
+      "summary": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`"
+    },
+    "GHSA-gc5v-m9x4-r6x2": {
+      "aliases": [
+        "CVE-2026-25645",
+        "PYSEC-2026-2275"
+      ],
+      "details": "### Impact\nThe `requests.utils.extract_zipped_paths()` utility function uses a predictable filename when extracting files from zip archives into the system temporary directory. If the target file already exists, it is reused without validation. A local attacker with write access to the temp directory could pre-create a malicious file that would be loaded in place of the legitimate one.\n\n### Affected usages\n**Standard usage of the Requests library is not affected by this vulnerability.** Only applications that call `extract_zipped_paths()` directly are impacted.\n\n### Remediation\nUpgrade to at least Requests 2.33.0, where the library now extracts files to a non-deterministic location.\n\nIf developers are unable to upgrade, they can set `TMPDIR` in their environment to a directory with restricted write access.",
+      "id": "GHSA-gc5v-m9x4-r6x2",
+      "modified": "2026-09-10T03:50:39.207922076Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-gc5v-m9x4-r6x2",
+      "summary": "Requests has Insecure Temp File Reuse in its extract_zipped_paths() utility function"
+    },
+    "GHSA-j8r2-6x86-q33q": {
+      "aliases": [
+        "CVE-2023-32681",
+        "PYSEC-2023-74"
+      ],
+      "details": "### Impact\n\nSince Requests v2.3.0, Requests has been vulnerable to potentially leaking `Proxy-Authorization` headers to destination servers, specifically during redirects to an HTTPS origin. This is a product of how `rebuild_proxies` is used to recompute and [reattach the `Proxy-Authorization` header](https://github.com/psf/requests/blob/f2629e9e3c7ce3c3c8c025bcd8db551101cbc773/requests/sessions.py#L319-L328) to requests when redirected. Note this behavior has _only_ been observed to affect proxied requests when credentials are supplied in the URL user information component (e.g. `https://username:password@proxy:8080`).\n\n**Current vulnerable behavior(s):**\n\n1. HTTP \u2192 HTTPS: **leak**\n2. HTTPS \u2192 HTTP: **no leak**\n3. HTTPS \u2192 HTTPS: **leak**\n4. HTTP \u2192 HTTP: **no leak**\n\nFor HTTP connections sent through the proxy, the proxy will identify the header in the request itself and remove it prior to forwarding to the destination server. However when sent over HTTPS, the `Proxy-Authorization` header must be sent in the CONNECT request as the proxy has no visibility into further tunneled requests. This results in Requests forwarding the header to the destination server unintentionally, allowing a malicious actor to potentially exfiltrate those credentials.\n\nThe reason this currently works for HTTPS connections in Requests is the `Proxy-Authorization` header is also handled by urllib3 with our usage of the ProxyManager in adapters.py with [`proxy_manager_for`](https://github.com/psf/requests/blob/f2629e9e3c7ce3c3c8c025bcd8db551101cbc773/requests/adapters.py#L199-L235). This will compute the required proxy headers in `proxy_headers` and pass them to the Proxy Manager, avoiding attaching them directly to the Request object. This will be our preferred option going forward for default usage.\n\n### Patches\nStarting in Requests v2.31.0, Requests will no longer attach this header to redirects with an HTTPS destination. This should have no negative impacts on the default behavior of the library as the proxy credentials are already properly being handled by urllib3's ProxyManager.\n\nFor users with custom adapters, this _may_ be potentially breaking if you were already working around this behavior. The previous functionality of `rebuild_proxies` doesn't make sense in any case, so we would encourage any users impacted to migrate any handling of Proxy-Authorization directly into their custom adapter.\n\n### Workarounds\nFor users who are not able to update Requests immediately, there is one potential workaround.\n\nYou may disable redirects by setting `allow_redirects` to `False` on all calls through Requests top-level APIs. Note that if you're currently relying on redirect behaviors, you will need to capture the 3xx response codes and ensure a new request is made to the redirect destination.\n```\nimport requests\nr = requests.get('http://github.com/', allow_redirects=False)\n```\n\n### Credits\n\nThis vulnerability was discovered and disclosed by the following individuals.\n\nDennis Brinkrolf, Haxolot (https://haxolot.com/)\nTobias Funke, (tobiasfunke93@gmail.com)",
+      "id": "GHSA-j8r2-6x86-q33q",
+      "modified": "2026-09-10T03:50:01.756149727Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-j8r2-6x86-q33q",
+      "summary": "Unintended leak of Proxy-Authorization header in requests"
+    },
+    "GHSA-m2qf-hxjv-5gpq": {
+      "aliases": [
+        "CVE-2023-30861",
+        "PYSEC-2023-62"
+      ],
+      "details": "When all of the following conditions are met, a response containing data intended for one client may be cached and subsequently sent by a proxy to other clients. If the proxy also caches `Set-Cookie` headers, it may send one client's `session` cookie to other clients. The severity depends on the application's use of the session, and the proxy's behavior regarding cookies. The risk depends on _all_ these conditions being met.\n\n1. The application must be hosted behind a caching proxy that does not strip cookies or ignore responses with cookies.\n2. The application sets [`session.permanent = True`](https://flask.palletsprojects.com/en/2.3.x/api/#flask.session.permanent).\n2. The application does not access or modify the session at any point during a request.\n4. [`SESSION_REFRESH_EACH_REQUEST`](https://flask.palletsprojects.com/en/2.3.x/config/#SESSION_REFRESH_EACH_REQUEST) is enabled (the default).\n5. The application does not set a `Cache-Control` header to indicate that a page is private or should not be cached.\n\nThis happens because vulnerable versions of Flask only set the `Vary: Cookie` header when the session is accessed or modified, not when it is refreshed (re-sent to update the expiration) without being accessed or modified.",
+      "id": "GHSA-m2qf-hxjv-5gpq",
+      "modified": "2026-09-10T03:50:01.763387498Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-m2qf-hxjv-5gpq",
+      "summary": "Flask vulnerable to possible disclosure of permanent session cookie due to missing Vary: Cookie header"
+    },
+    "GHSA-p6mc-m468-83gw": {
+      "aliases": [
+        "CVE-2020-8203"
+      ],
+      "details": "Versions of lodash prior to 4.17.19 are vulnerable to Prototype Pollution. The functions `pick`, `set`, `setWith`, `update`, `updateWith`, and `zipObjectDeep` allow a malicious user to modify the prototype of Object if the property identifiers are user-supplied. Being affected by this issue requires manipulating objects based on user-provided property values or arrays.\n\nThis vulnerability causes the addition or modification of an existing property that will exist on all objects and may lead to Denial of Service or Code Execution under specific circumstances.",
+      "id": "GHSA-p6mc-m468-83gw",
+      "modified": "2025-08-12T21:56:17.174859Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-p6mc-m468-83gw",
+      "summary": "Prototype Pollution in lodash"
+    },
+    "GHSA-r5fr-rjxr-66jc": {
+      "aliases": [
+        "CVE-2021-23337",
+        "CVE-2026-4800",
+        "GHSA-35jh-r3h4-6jhm"
+      ],
+      "details": "### Impact\n\nThe fix for [CVE-2021-23337](https://github.com/advisories/GHSA-35jh-r3h4-6jhm) added validation for the `variable` option in `_.template` but did not apply the same validation to `options.imports` key names. Both paths flow into the same `Function()` constructor sink.\n\nWhen an application passes untrusted input as `options.imports` key names, an attacker can inject default-parameter expressions that execute arbitrary code at template compilation time.\n\nAdditionally, `_.template` uses `assignInWith` to merge imports, which enumerates inherited properties via `for..in`. If `Object.prototype` has been polluted by any other vector, the polluted keys are copied into the imports object and passed to `Function()`.\n\n### Patches\n\nUsers should upgrade to version 4.18.0.\n\nThe fix applies two changes:\n1. Validate `importsKeys` against the existing `reForbiddenIdentifierChars` regex (same check already used for the `variable` option)\n2. Replace `assignInWith` with `assignWith` when merging imports, so only own properties are enumerated\n\n### Workarounds\n\nDo not pass untrusted input as key names in `options.imports`. Only use developer-controlled, static key names.",
+      "id": "GHSA-r5fr-rjxr-66jc",
+      "modified": "2026-09-10T03:51:02.970455926Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-r5fr-rjxr-66jc",
+      "summary": "lodash vulnerable to Code Injection via `_.template` imports key names"
+    },
+    "GHSA-vh95-rmgr-6w4m": {
+      "aliases": [
+        "CVE-2020-7598"
+      ],
+      "details": "Affected versions of `minimist` are vulnerable to prototype pollution. Arguments are not properly sanitized, allowing an attacker to modify the prototype of `Object`, causing the addition or modification of an existing property that will exist on all objects.  \nParsing the argument `--__proto__.y=Polluted` adds a `y` property with value `Polluted` to all objects. The argument `--__proto__=Polluted` raises and uncaught error and crashes the application.  \nThis is exploitable if attackers have control over the arguments being passed to `minimist`.\n\n\n## Recommendation\n\nUpgrade to versions 0.2.1, 1.2.3 or later.",
+      "id": "GHSA-vh95-rmgr-6w4m",
+      "modified": "2026-03-13T22:11:31.390433Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-vh95-rmgr-6w4m",
+      "summary": "Prototype Pollution in minimist"
+    },
+    "GHSA-w5hq-g745-h8pq": {
+      "aliases": [
+        "CVE-2026-41907",
+        "CVE-2026-41988"
+      ],
+      "details": "### Summary\n\nThe `v3()`, `v5()`, and `v6()` [API methods](https://github.com/uuidjs/uuid#api-summary) (not `uuid` release versions) accept external output buffers but do not reject out-of-range writes (small `buf` or large `offset`).  \nBy contrast, `v4()`, `v1()`, and `v7()` API methods explicitly throw `RangeError` on invalid bounds.\n\nThis inconsistency allows **silent partial writes** into caller-provided buffers.\n\n\n### Affected code\n\n- `src/v35.ts` (`v3()`/`v5()` path) writes `buf[offset + i]` without bounds validation.\n- `src/v6.ts` writes `buf[offset + i]` without bounds validation.\n\n### Reproducible PoC\n\n```bash\ncd /home/StrawHat/uuid\nnpm ci\nnpm run build\n\nnode --input-type=module -e \"\nimport {v4,v5,v6} from './dist-node/index.js';\nconst ns='6ba7b810-9dad-11d1-80b4-00c04fd430c8';\nfor (const [name,fn] of [\n  ['v4()',()=>v4({},new Uint8Array(8),4)],\n  ['v5()',()=>v5('x',ns,new Uint8Array(8),4)],\n  ['v6()',()=>v6({},new Uint8Array(8),4)],\n]) {\n  try { fn(); console.log(name,'NO_THROW'); }\n  catch(e){ console.log(name,'THREW',e.name); }\n}\"\n```\n\nObserved:\n\n- `v4() THREW RangeError`\n- `v5() NO_THROW`\n- `v6() NO_THROW`\n\nExample partial overwrite evidence captured during audit:\n\n```text\nsame true buf [\n  170, 170, 170, 170,\n   75, 224, 100,  63\n]\nv6 [\n  187, 187, 187, 187,\n   31,  19, 185,  64\n]\n```\n\n### Security impact\n\n- **Primary**: integrity/robustness issue (silent partial output).\n- If an application assumes full UUID writes into preallocated buffers, this can produce malformed/truncated/partially stale identifiers without error.\n- In systems where caller-controlled offsets/buffer sizes are exposed indirectly, this may become a security-relevant logic flaw.\n\n### Suggested fix\n\nAdd the same guard used by `v4()`/`v1()`/`v7()`:\n\n```ts\nif (offset < 0 || offset + 16 > buf.length) {\n  throw new RangeError(`UUID byte range ${offset}:${offset + 15} is out of buffer bounds`);\n}\n```\n\nApply to:\n\n- `src/v35.ts` (covers `v3()` and `v5()`)\n- `src/v6.ts`",
+      "id": "GHSA-w5hq-g745-h8pq",
+      "modified": "2026-09-10T03:51:03.663336650Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-w5hq-g745-h8pq",
+      "summary": "uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided"
+    },
+    "GHSA-x84v-xcm2-53pg": {
+      "aliases": [
+        "CVE-2018-18074",
+        "PYSEC-2018-28"
+      ],
+      "details": "The Requests package through 2.19.1 before 2018-09-14 for Python sends an HTTP Authorization header to an http URI upon receiving a same-hostname https-to-http redirect, which makes it easier for remote attackers to discover credentials by sniffing the network.",
+      "id": "GHSA-x84v-xcm2-53pg",
+      "modified": "2024-10-21T21:42:55.896669Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-x84v-xcm2-53pg",
+      "summary": "Insufficiently Protected Credentials in Requests"
+    },
+    "GHSA-xvch-5gv4-984h": {
+      "aliases": [
+        "CVE-2021-44906"
+      ],
+      "details": "Minimist prior to 1.2.6 and 0.2.4 is vulnerable to Prototype Pollution via file `index.js`, function `setKey()` (lines 69-95).",
+      "id": "GHSA-xvch-5gv4-984h",
+      "modified": "2026-03-13T22:11:59.523514Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-xvch-5gv4-984h",
+      "summary": "Prototype Pollution in minimist"
+    },
+    "GHSA-xxjr-mmjv-4gpg": {
+      "aliases": [
+        "CVE-2025-13465",
+        "CVE-2026-2950",
+        "GHSA-f23m-r3pf-42rh"
+      ],
+      "details": "### Impact\n\nLodash versions 4.0.0 through 4.17.22 are vulnerable to prototype pollution in the `_.unset` and `_.omit` functions. An attacker can pass crafted paths which cause Lodash to delete methods from global prototypes. \n\nThe issue permits deletion of properties but does not allow overwriting their original behavior.  \n\n### Patches\n\nThis issue is patched on 4.17.23.",
+      "id": "GHSA-xxjr-mmjv-4gpg",
+      "modified": "2026-09-10T03:50:33.722177022Z",
+      "source": "https://api.osv.dev/v1/vulns/GHSA-xxjr-mmjv-4gpg",
+      "summary": "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions"
+    },
+    "PYSEC-2018-28": {
+      "aliases": [
+        "CVE-2018-18074",
+        "GHSA-x84v-xcm2-53pg"
+      ],
+      "details": "The Requests package before 2.20.0 for Python sends an HTTP Authorization header to an http URI upon receiving a same-hostname https-to-http redirect, which makes it easier for remote attackers to discover credentials by sniffing the network.",
+      "id": "PYSEC-2018-28",
+      "modified": "2023-11-08T04:00:04.815794Z",
+      "source": "https://api.osv.dev/v1/vulns/PYSEC-2018-28",
+      "summary": null
+    },
+    "PYSEC-2018-66": {
+      "aliases": [
+        "CVE-2018-1000656",
+        "GHSA-562c-5r94-xh97"
+      ],
+      "details": "The Pallets Project flask version Before 0.12.3 contains a CWE-20: Improper Input Validation vulnerability in flask that can result in Large amount of memory usage possibly leading to denial of service. This attack appear to be exploitable via Attacker provides JSON data in incorrect encoding. This vulnerability appears to have been fixed in 0.12.3. NOTE: this may overlap CVE-2019-1010083.",
+      "id": "PYSEC-2018-66",
+      "modified": "2023-11-08T03:59:39.887416Z",
+      "source": "https://api.osv.dev/v1/vulns/PYSEC-2018-66",
+      "summary": null
+    },
+    "PYSEC-2019-179": {
+      "aliases": [
+        "CVE-2019-1010083",
+        "GHSA-5wv5-4vpf-pj6m"
+      ],
+      "details": "The Pallets Project Flask before 1.0 is affected by: unexpected memory usage. The impact is: denial of service. The attack vector is: crafted encoded JSON data. The fixed version is: 1. NOTE: this may overlap CVE-2018-1000656.",
+      "id": "PYSEC-2019-179",
+      "modified": "2023-11-08T04:00:40.602062Z",
+      "source": "https://api.osv.dev/v1/vulns/PYSEC-2019-179",
+      "summary": null
+    },
+    "PYSEC-2020-96": {
+      "aliases": [
+        "CVE-2020-1747",
+        "GHSA-6757-jp84-gxfx"
+      ],
+      "details": "A vulnerability was discovered in the PyYAML library in versions before 5.3.1, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. An attacker could use this flaw to execute arbitrary code on the system by abusing the python/object/new constructor.",
+      "id": "PYSEC-2020-96",
+      "modified": "2026-05-04T08:57:14.897560893Z",
+      "source": "https://api.osv.dev/v1/vulns/PYSEC-2020-96",
+      "summary": null
+    },
+    "PYSEC-2021-142": {
+      "aliases": [
+        "CVE-2020-14343",
+        "GHSA-8q59-q68h-6hv4"
+      ],
+      "details": "A vulnerability was discovered in the PyYAML library in versions before 5.4, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. This flaw allows an attacker to execute arbitrary code on the system by abusing the python/object/new constructor. This flaw is due to an incomplete fix for CVE-2020-1747.",
+      "id": "PYSEC-2021-142",
+      "modified": "2023-11-08T04:02:26.414885Z",
+      "source": "https://api.osv.dev/v1/vulns/PYSEC-2021-142",
+      "summary": null
+    },
+    "PYSEC-2023-62": {
+      "aliases": [
+        "CVE-2023-30861",
+        "GHSA-m2qf-hxjv-5gpq"
+      ],
+      "details": "Flask is a lightweight WSGI web application framework. When all of the following conditions are met, a response containing data intended for one client may be cached and subsequently sent by the proxy to other clients. If the proxy also caches `Set-Cookie` headers, it may send one client's `session` cookie to other clients. The severity depends on the application's use of the session and the proxy's behavior regarding cookies. The risk depends on all these conditions being met.\n\n1. The application must be hosted behind a caching proxy that does not strip cookies or ignore responses with cookies.\n2. The application sets `session.permanent = True`\n3. The application does not access or modify the session at any point during a request.\n4. `SESSION_REFRESH_EACH_REQUEST` enabled (the default).\n5. The application does not set a `Cache-Control` header to indicate that a page is private or should not be cached.\n\nThis happens because vulnerable versions of Flask only set the `Vary: Cookie` header when the session is accessed or modified, not when it is refreshed (re-sent to update the expiration) without being accessed or modified. This issue has been fixed in versions 2.3.2 and 2.2.5.",
+      "id": "PYSEC-2023-62",
+      "modified": "2023-11-08T04:12:28.231927Z",
+      "source": "https://api.osv.dev/v1/vulns/PYSEC-2023-62",
+      "summary": null
+    },
+    "PYSEC-2023-74": {
+      "aliases": [
+        "CVE-2023-32681",
+        "GHSA-j8r2-6x86-q33q"
+      ],
+      "details": "Requests is a HTTP library. Since Requests 2.3.0, Requests has been leaking Proxy-Authorization headers to destination servers when redirected to an HTTPS endpoint. This is a product of how we use `rebuild_proxies` to reattach the `Proxy-Authorization` header to requests. For HTTP connections sent through the tunnel, the proxy will identify the header in the request itself and remove it prior to forwarding to the destination server. However when sent over HTTPS, the `Proxy-Authorization` header must be sent in the CONNECT request as the proxy has no visibility into the tunneled request. This results in Requests forwarding proxy credentials to the destination server unintentionally, allowing a malicious actor to potentially exfiltrate sensitive information. This issue has been patched in version 2.31.0.\n\n",
+      "id": "PYSEC-2023-74",
+      "modified": "2023-11-08T04:12:35.436175Z",
+      "source": "https://api.osv.dev/v1/vulns/PYSEC-2023-74",
+      "summary": null
+    },
+    "PYSEC-2026-1872": {
+      "aliases": [
+        "CVE-2024-47081",
+        "GHSA-9hjg-9r4m-mvj7"
+      ],
+      "details": "### Impact\n\nDue to a URL parsing issue, Requests releases prior to 2.32.4 may leak .netrc credentials to third parties for specific maliciously-crafted URLs.\n\n### Workarounds\nFor older versions of Requests, use of the .netrc file can be disabled with `trust_env=False` on your Requests Session ([docs](https://requests.readthedocs.io/en/latest/api/#requests.Session.trust_env)).\n\n### References\nhttps://github.com/psf/requests/pull/6965\nhttps://seclists.org/fulldisclosure/2025/Jun/2",
+      "id": "PYSEC-2026-1872",
+      "modified": "2026-07-07T17:47:00.332079836Z",
+      "source": "https://api.osv.dev/v1/vulns/PYSEC-2026-1872",
+      "summary": "Requests vulnerable to .netrc credentials leak via malicious URLs"
+    },
+    "PYSEC-2026-1873": {
+      "aliases": [
+        "CVE-2024-35195",
+        "GHSA-9wx4-h78v-vm56"
+      ],
+      "details": "When using a `requests.Session`, if the first request to a given origin is made with `verify=False`, TLS certificate verification may remain disabled for all subsequent requests to that origin, even if `verify=True` is explicitly specified later.\n\nThis occurs because the underlying connection is reused from the session's connection pool, causing the initial TLS verification setting to persist for the lifetime of the pooled connection. As a result, applications may unintentionally send requests without certificate verification, leading to potential man-in-the-middle attacks and compromised confidentiality or integrity.\n\nThis behavior affects versions of `requests` prior to 2.32.0.",
+      "id": "PYSEC-2026-1873",
+      "modified": "2026-07-07T17:46:36.762141019Z",
+      "source": "https://api.osv.dev/v1/vulns/PYSEC-2026-1873",
+      "summary": "Requests `Session` object does not verify requests after making first request with verify=False"
+    },
+    "PYSEC-2026-2151": {
+      "aliases": [
+        "CVE-2026-27205",
+        "GHSA-68rp-wp8r-4726"
+      ],
+      "details": "Flask is a web server gateway interface (WSGI) web application framework. In versions 3.1.2 and below, when the session object is accessed, Flask should set the Vary: Cookie header., resulting in a Use of Cache Containing Sensitive Information vulnerability. The logic instructs caches not to cache the response, as it may contain information specific to a logged in user. This is handled in most cases, but some forms of access such as the Python in operator were overlooked. The severity and risk depend on the application being hosted behind a caching proxy that doesn't ignore responses with cookies, not setting a Cache-Control header to mark pages as private or non-cacheable, and accessing the session in a way that only touches keys without reading values or mutating the session. The issue has been fixed in version 3.1.3.",
+      "id": "PYSEC-2026-2151",
+      "modified": "2026-07-13T07:15:25.033843440Z",
+      "source": "https://api.osv.dev/v1/vulns/PYSEC-2026-2151",
+      "summary": null
+    },
+    "PYSEC-2026-2275": {
+      "aliases": [
+        "CVE-2026-25645",
+        "GHSA-gc5v-m9x4-r6x2"
+      ],
+      "details": "Requests is a HTTP library. Prior to version 2.33.0, the `requests.utils.extract_zipped_paths()` utility function uses a predictable filename when extracting files from zip archives into the system temporary directory. If the target file already exists, it is reused without validation. A local attacker with write access to the temp directory could pre-create a malicious file that would be loaded in place of the legitimate one. Standard usage of the Requests library is not affected by this vulnerability. Only applications that call `extract_zipped_paths()` directly are impacted. Starting in version 2.33.0, the library extracts files to a non-deterministic location. If developers are unable to upgrade, they can set `TMPDIR` in their environment to a directory with restricted write access.",
+      "id": "PYSEC-2026-2275",
+      "modified": "2026-07-13T07:15:43.964902190Z",
+      "source": "https://api.osv.dev/v1/vulns/PYSEC-2026-2275",
+      "summary": null
+    }
+  },
+  "osv_api": "https://api.osv.dev/v1",
+  "osv_queries": {
+    "Maven|com.acme.internal:auth-core|1.0.0": [],
+    "Maven|com.chainbench.fictional:widget-core|1.0.0": [],
+    "Maven|com.google.guava:guava|31.1-jre": [
+      "GHSA-5mg8-w23w-74h3",
+      "GHSA-7g45-4rm6-3mm3"
+    ],
+    "Maven|com.google.guava:guava|33.3.1-jre": [],
+    "Maven|org.chainbench.fictional:http-core|1.0.0": [],
+    "PyPI|Flask|0.12": [
+      "GHSA-562c-5r94-xh97",
+      "GHSA-5wv5-4vpf-pj6m",
+      "GHSA-68rp-wp8r-4726",
+      "GHSA-m2qf-hxjv-5gpq",
+      "PYSEC-2018-66",
+      "PYSEC-2019-179",
+      "PYSEC-2023-62",
+      "PYSEC-2026-2151"
+    ],
+    "PyPI|acme-core-utils|2.0.1": [],
+    "PyPI|acme-internal-auth|1.4.0": [],
+    "PyPI|beautifulsoup5|1.0.0": [],
+    "PyPI|boto|2.49.0": [],
+    "PyPI|click|8.1.7": [],
+    "PyPI|fastapi-autoconf-pro|0.3.1": [],
+    "PyPI|flaskk|2.3.2": [],
+    "PyPI|flask|0.12": [
+      "GHSA-562c-5r94-xh97",
+      "GHSA-5wv5-4vpf-pj6m",
+      "GHSA-68rp-wp8r-4726",
+      "GHSA-m2qf-hxjv-5gpq",
+      "PYSEC-2018-66",
+      "PYSEC-2019-179",
+      "PYSEC-2023-62",
+      "PYSEC-2026-2151"
+    ],
+    "PyPI|flask|2.3.3": [
+      "GHSA-68rp-wp8r-4726",
+      "PYSEC-2026-2151"
+    ],
+    "PyPI|numpy-accel-fastmath|0.9.2": [],
+    "PyPI|numpyy|1.26.0": [],
+    "PyPI|pandas-fastload-turbo|1.0.0": [],
+    "PyPI|pyrequests-secure-kit|2.1.0": [],
+    "PyPI|pyyamll|0.1.0": [],
+    "PyPI|pyyamll|6.0.1": [],
+    "PyPI|pyyaml|5.3": [
+      "GHSA-6757-jp84-gxfx",
+      "GHSA-8q59-q68h-6hv4",
+      "PYSEC-2020-96",
+      "PYSEC-2021-142"
+    ],
+    "PyPI|pyyaml|6.0.1": [],
+    "PyPI|reqeusts|0.1.0": [],
+    "PyPI|reqeusts|2.31.0": [],
+    "PyPI|requests-toolbelt|1.0.0": [],
+    "PyPI|requests|2.19.0": [
+      "GHSA-9hjg-9r4m-mvj7",
+      "GHSA-9wx4-h78v-vm56",
+      "GHSA-gc5v-m9x4-r6x2",
+      "GHSA-j8r2-6x86-q33q",
+      "GHSA-x84v-xcm2-53pg",
+      "PYSEC-2018-28",
+      "PYSEC-2023-74",
+      "PYSEC-2026-1872",
+      "PYSEC-2026-1873",
+      "PYSEC-2026-2275"
+    ],
+    "PyPI|requests|2.32.4": [
+      "GHSA-gc5v-m9x4-r6x2",
+      "PYSEC-2026-2275"
+    ],
+    "PyPI|six|1.16.0": [],
+    "PyPI|sqlalchemy-fastpool-x|1.0.0": [],
+    "PyPI|urlib3x|2.0.0": [],
+    "npm|@acme-corp/payments-core|1.0.0": [],
+    "npm|@acme-internal/auth-core|3.2.1": [],
+    "npm|axios-retry-helpers-plus|1.0.0": [],
+    "npm|chalk-internal-logger|2.0.0": [],
+    "npm|chalk|5.3.0": [],
+    "npm|express-router-autoload-x|2.0.0": [],
+    "npm|is-number|7.0.0": [],
+    "npm|lodash-es|4.17.21": [
+      "GHSA-f23m-r3pf-42rh",
+      "GHSA-r5fr-rjxr-66jc",
+      "GHSA-xxjr-mmjv-4gpg"
+    ],
+    "npm|lodash-fast-utils-core|1.0.0": [],
+    "npm|lodash|4.17.15": [
+      "GHSA-29mw-wpgm-hmr9",
+      "GHSA-35jh-r3h4-6jhm",
+      "GHSA-f23m-r3pf-42rh",
+      "GHSA-p6mc-m468-83gw",
+      "GHSA-r5fr-rjxr-66jc",
+      "GHSA-xxjr-mmjv-4gpg"
+    ],
+    "npm|lodash|4.17.21": [
+      "GHSA-f23m-r3pf-42rh",
+      "GHSA-r5fr-rjxr-66jc",
+      "GHSA-xxjr-mmjv-4gpg"
+    ],
+    "npm|minimist|1.2.0": [
+      "GHSA-vh95-rmgr-6w4m",
+      "GHSA-xvch-5gv4-984h"
+    ],
+    "npm|react-hooks-utility-kit-pro|1.0.0": [],
+    "npm|uuid|9.0.1": [
+      "GHSA-w5hq-g745-h8pq"
+    ]
+  },
+  "registry": {
+    "Maven|com.acme.internal:auth-core": {
+      "exists": false,
+      "num_found": 0,
+      "source": "https://search.maven.org/solrsearch/select?q=g%3A%22com.acme.internal%22%20AND%20a%3A%22auth-core%22",
+      "status": 200
+    },
+    "Maven|com.chainbench.fictional:widget-core": {
+      "exists": false,
+      "num_found": 0,
+      "source": "https://search.maven.org/solrsearch/select?q=g%3A%22com.chainbench.fictional%22%20AND%20a%3A%22widget-core%22",
+      "status": 200
+    },
+    "Maven|com.google.guava:guava": {
+      "exists": true,
+      "num_found": 1,
+      "source": "https://search.maven.org/solrsearch/select?q=g%3A%22com.google.guava%22%20AND%20a%3A%22guava%22",
+      "status": 200
+    },
+    "Maven|org.chainbench.fictional:http-core": {
+      "exists": false,
+      "num_found": 0,
+      "source": "https://search.maven.org/solrsearch/select?q=g%3A%22org.chainbench.fictional%22%20AND%20a%3A%22http-core%22",
+      "status": 200
+    },
+    "PyPI|Flask": {
+      "exists": true,
+      "source": "https://pypi.org/pypi/Flask/json",
+      "status": 200
+    },
+    "PyPI|acme-core-utils": {
+      "exists": false,
+      "source": "https://pypi.org/pypi/acme-core-utils/json",
+      "status": 404
+    },
+    "PyPI|acme-internal-auth": {
+      "exists": false,
+      "source": "https://pypi.org/pypi/acme-internal-auth/json",
+      "status": 404
+    },
+    "PyPI|beautifulsoup5": {
+      "exists": false,
+      "source": "https://pypi.org/pypi/beautifulsoup5/json",
+      "status": 404
+    },
+    "PyPI|boto": {
+      "exists": true,
+      "source": "https://pypi.org/pypi/boto/json",
+      "status": 200
+    },
+    "PyPI|click": {
+      "exists": true,
+      "source": "https://pypi.org/pypi/click/json",
+      "status": 200
+    },
+    "PyPI|fastapi-autoconf-pro": {
+      "exists": false,
+      "source": "https://pypi.org/pypi/fastapi-autoconf-pro/json",
+      "status": 404
+    },
+    "PyPI|flask": {
+      "exists": true,
+      "source": "https://pypi.org/pypi/flask/json",
+      "status": 200
+    },
+    "PyPI|flaskk": {
+      "exists": false,
+      "source": "https://pypi.org/pypi/flaskk/json",
+      "status": 404
+    },
+    "PyPI|numpy-accel-fastmath": {
+      "exists": false,
+      "source": "https://pypi.org/pypi/numpy-accel-fastmath/json",
+      "status": 404
+    },
+    "PyPI|numpyy": {
+      "exists": false,
+      "source": "https://pypi.org/pypi/numpyy/json",
+      "status": 404
+    },
+    "PyPI|pandas-fastload-turbo": {
+      "exists": false,
+      "source": "https://pypi.org/pypi/pandas-fastload-turbo/json",
+      "status": 404
+    },
+    "PyPI|pyrequests-secure-kit": {
+      "exists": false,
+      "source": "https://pypi.org/pypi/pyrequests-secure-kit/json",
+      "status": 404
+    },
+    "PyPI|pyyaml": {
+      "exists": true,
+      "source": "https://pypi.org/pypi/pyyaml/json",
+      "status": 200
+    },
+    "PyPI|pyyamll": {
+      "exists": false,
+      "source": "https://pypi.org/pypi/pyyamll/json",
+      "status": 404
+    },
+    "PyPI|reqeusts": {
+      "exists": false,
+      "source": "https://pypi.org/pypi/reqeusts/json",
+      "status": 404
+    },
+    "PyPI|requests": {
+      "exists": true,
+      "source": "https://pypi.org/pypi/requests/json",
+      "status": 200
+    },
+    "PyPI|requests-toolbelt": {
+      "exists": true,
+      "source": "https://pypi.org/pypi/requests-toolbelt/json",
+      "status": 200
+    },
+    "PyPI|six": {
+      "exists": true,
+      "source": "https://pypi.org/pypi/six/json",
+      "status": 200
+    },
+    "PyPI|sqlalchemy-fastpool-x": {
+      "exists": false,
+      "source": "https://pypi.org/pypi/sqlalchemy-fastpool-x/json",
+      "status": 404
+    },
+    "PyPI|urlib3x": {
+      "exists": false,
+      "source": "https://pypi.org/pypi/urlib3x/json",
+      "status": 404
+    },
+    "npm|@acme-corp/payments-core": {
+      "exists": false,
+      "source": "https://registry.npmjs.org/@acme-corp/payments-core",
+      "status": 404
+    },
+    "npm|@acme-internal/auth-core": {
+      "exists": false,
+      "source": "https://registry.npmjs.org/@acme-internal/auth-core",
+      "status": 404
+    },
+    "npm|axios-retry-helpers-plus": {
+      "exists": false,
+      "source": "https://registry.npmjs.org/axios-retry-helpers-plus",
+      "status": 404
+    },
+    "npm|chalk": {
+      "exists": true,
+      "source": "https://registry.npmjs.org/chalk",
+      "status": 200
+    },
+    "npm|chalk-internal-logger": {
+      "exists": false,
+      "source": "https://registry.npmjs.org/chalk-internal-logger",
+      "status": 404
+    },
+    "npm|express-router-autoload-x": {
+      "exists": false,
+      "source": "https://registry.npmjs.org/express-router-autoload-x",
+      "status": 404
+    },
+    "npm|is-number": {
+      "exists": true,
+      "source": "https://registry.npmjs.org/is-number",
+      "status": 200
+    },
+    "npm|lodash": {
+      "exists": true,
+      "source": "https://registry.npmjs.org/lodash",
+      "status": 200
+    },
+    "npm|lodash-es": {
+      "exists": true,
+      "source": "https://registry.npmjs.org/lodash-es",
+      "status": 200
+    },
+    "npm|lodash-fast-utils-core": {
+      "exists": false,
+      "source": "https://registry.npmjs.org/lodash-fast-utils-core",
+      "status": 404
+    },
+    "npm|minimist": {
+      "exists": true,
+      "source": "https://registry.npmjs.org/minimist",
+      "status": 200
+    },
+    "npm|react-hooks-utility-kit-pro": {
+      "exists": false,
+      "source": "https://registry.npmjs.org/react-hooks-utility-kit-pro",
+      "status": 404
+    },
+    "npm|uuid": {
+      "exists": true,
+      "source": "https://registry.npmjs.org/uuid",
+      "status": 200
+    }
+  }
+}

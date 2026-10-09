@@ -1,0 +1,54 @@
+{
+  "case_id": "CB-DC-007",
+  "category": "dependency_confusion",
+  "ecosystem": [
+    "npm"
+  ],
+  "description": "Internal-looking npm name chalk-internal-logger.",
+  "fixture_path": "cases/dependency_confusion/CB-DC-007/repo",
+  "pins": [
+    {
+      "ecosystem": "npm",
+      "name": "chalk-internal-logger",
+      "version": "2.0.0"
+    }
+  ],
+  "imports": [],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [],
+    "reachable": [],
+    "unreachable": [],
+    "undetermined": [],
+    "suspicious_packages": [
+      "chalk-internal-logger"
+    ],
+    "checked_packages": [
+      "npm|chalk-internal-logger"
+    ],
+    "dependency_disclosures": [],
+    "expected_verdict": "SUSPICIOUS",
+    "expected_exit_code": 1
+  },
+  "expected_verdict": "SUSPICIOUS",
+  "expected_exit_code": 1,
+  "expected_evidence": [
+    "chalk-internal-logger: suspicious with a 'package not found in registry' reason"
+  ],
+  "dependency_disclosures": [],
+  "rationale": "Name resembles a real package family but is absent from npm.",
+  "call_path": "",
+  "supported": true,
+  "engine_boundary": null,
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

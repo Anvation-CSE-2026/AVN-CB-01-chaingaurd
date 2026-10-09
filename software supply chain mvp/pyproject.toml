@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chainguard-mvp"
+version = "0.1.0"
+description = "A small reachability-aware dependency risk scanner"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["requests>=2.31,<3"]
+
+[project.scripts]
+chainguard-mvp = "chainguard_mvp.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["chainguard_mvp*"]
+
+[tool.pytest.ini_options]
+markers = [
+    "integration: tests that make live network calls to OSV or external registries",
+]
+

@@ -1,0 +1,118 @@
+{
+  "case_id": "CB-UNPIN-007",
+  "category": "unpinned",
+  "ecosystem": [
+    "npm"
+  ],
+  "description": "npm tilde range ~1.2.0 analysed as its lower bound.",
+  "fixture_path": "cases/unpinned/CB-UNPIN-007/repo",
+  "pins": [
+    {
+      "ecosystem": "npm",
+      "name": "minimist",
+      "version": "1.2.0"
+    }
+  ],
+  "imports": [],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [
+      {
+        "id": "GHSA-vh95-rmgr-6w4m",
+        "aliases": [
+          "CVE-2020-7598"
+        ],
+        "ecosystem": "npm",
+        "package": "minimist",
+        "version": "1.2.0",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [
+          "minimist"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-vh95-rmgr-6w4m"
+      },
+      {
+        "id": "GHSA-xvch-5gv4-984h",
+        "aliases": [
+          "CVE-2021-44906"
+        ],
+        "ecosystem": "npm",
+        "package": "minimist",
+        "version": "1.2.0",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-xvch-5gv4-984h"
+      }
+    ],
+    "reachable": [],
+    "unreachable": [
+      {
+        "id": "GHSA-vh95-rmgr-6w4m",
+        "package": "minimist",
+        "version": "1.2.0",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "GHSA-xvch-5gv4-984h",
+        "package": "minimist",
+        "version": "1.2.0",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      }
+    ],
+    "undetermined": [],
+    "suspicious_packages": [],
+    "checked_packages": [
+      "npm|minimist"
+    ],
+    "dependency_disclosures": [
+      {
+        "name": "minimist",
+        "allowed_reasons": [
+          "ranged_declaration_proxied"
+        ]
+      }
+    ],
+    "expected_verdict": "DISMISSED",
+    "expected_exit_code": 0
+  },
+  "expected_verdict": "DISMISSED",
+  "expected_exit_code": 0,
+  "expected_evidence": [
+    "GHSA-vh95-rmgr-6w4m (minimist@1.2.0): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "GHSA-xvch-5gv4-984h (minimist@1.2.0): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "minimist: disclosed as one of ['ranged_declaration_proxied'] in unresolved_dependencies"
+  ],
+  "dependency_disclosures": [
+    {
+      "name": "minimist",
+      "allowed_reasons": [
+        "ranged_declaration_proxied"
+      ]
+    }
+  ],
+  "rationale": "Same silent lower-bound proxy as the caret case.",
+  "call_path": "",
+  "supported": true,
+  "engine_boundary": null,
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

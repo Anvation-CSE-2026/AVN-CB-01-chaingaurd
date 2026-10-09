@@ -1,0 +1,862 @@
+{
+  "corpus": "ChainBench-100",
+  "case_count": 107,
+  "cases": [
+    {
+      "case_id": "CB-CLEAN-001",
+      "category": "clean",
+      "path": "cases/clean/CB-CLEAN-001",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-CLEAN-002",
+      "category": "clean",
+      "path": "cases/clean/CB-CLEAN-002",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-CLEAN-003",
+      "category": "clean",
+      "path": "cases/clean/CB-CLEAN-003",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-CLEAN-004",
+      "category": "clean",
+      "path": "cases/clean/CB-CLEAN-004",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-CLEAN-005",
+      "category": "clean",
+      "path": "cases/clean/CB-CLEAN-005",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-CLEAN-006",
+      "category": "clean",
+      "path": "cases/clean/CB-CLEAN-006",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-CLEAN-007",
+      "category": "clean",
+      "path": "cases/clean/CB-CLEAN-007",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-CLEAN-008",
+      "category": "clean",
+      "path": "cases/clean/CB-CLEAN-008",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-CLEAN-009",
+      "category": "clean",
+      "path": "cases/clean/CB-CLEAN-009",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-CLEAN-010",
+      "category": "clean",
+      "path": "cases/clean/CB-CLEAN-010",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-CLEAN-011",
+      "category": "clean",
+      "path": "cases/clean/CB-CLEAN-011",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-VULN-001",
+      "category": "vulnerable",
+      "path": "cases/vulnerable/CB-VULN-001",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-VULN-002",
+      "category": "vulnerable",
+      "path": "cases/vulnerable/CB-VULN-002",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-VULN-003",
+      "category": "vulnerable",
+      "path": "cases/vulnerable/CB-VULN-003",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-VULN-004",
+      "category": "vulnerable",
+      "path": "cases/vulnerable/CB-VULN-004",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-VULN-005",
+      "category": "vulnerable",
+      "path": "cases/vulnerable/CB-VULN-005",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-VULN-006",
+      "category": "vulnerable",
+      "path": "cases/vulnerable/CB-VULN-006",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-VULN-007",
+      "category": "vulnerable",
+      "path": "cases/vulnerable/CB-VULN-007",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-VULN-008",
+      "category": "vulnerable",
+      "path": "cases/vulnerable/CB-VULN-008",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-VULN-009",
+      "category": "vulnerable",
+      "path": "cases/vulnerable/CB-VULN-009",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-VULN-010",
+      "category": "vulnerable",
+      "path": "cases/vulnerable/CB-VULN-010",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-VULN-011",
+      "category": "vulnerable",
+      "path": "cases/vulnerable/CB-VULN-011",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-REACH-001",
+      "category": "reachable",
+      "path": "cases/reachable/CB-REACH-001",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-REACH-002",
+      "category": "reachable",
+      "path": "cases/reachable/CB-REACH-002",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-REACH-003",
+      "category": "reachable",
+      "path": "cases/reachable/CB-REACH-003",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-REACH-004",
+      "category": "reachable",
+      "path": "cases/reachable/CB-REACH-004",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-REACH-005",
+      "category": "reachable",
+      "path": "cases/reachable/CB-REACH-005",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-REACH-006",
+      "category": "reachable",
+      "path": "cases/reachable/CB-REACH-006",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-REACH-007",
+      "category": "reachable",
+      "path": "cases/reachable/CB-REACH-007",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-REACH-008",
+      "category": "reachable",
+      "path": "cases/reachable/CB-REACH-008",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-REACH-009",
+      "category": "reachable",
+      "path": "cases/reachable/CB-REACH-009",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-REACH-010",
+      "category": "reachable",
+      "path": "cases/reachable/CB-REACH-010",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-REACH-011",
+      "category": "reachable",
+      "path": "cases/reachable/CB-REACH-011",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-REACH-012",
+      "category": "reachable",
+      "path": "cases/reachable/CB-REACH-012",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": "java_source_reachability"
+    },
+    {
+      "case_id": "CB-REACH-013",
+      "category": "reachable",
+      "path": "cases/reachable/CB-REACH-013",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": "java_source_reachability"
+    },
+    {
+      "case_id": "CB-UNREACH-001",
+      "category": "unreachable",
+      "path": "cases/unreachable/CB-UNREACH-001",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNREACH-002",
+      "category": "unreachable",
+      "path": "cases/unreachable/CB-UNREACH-002",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNREACH-003",
+      "category": "unreachable",
+      "path": "cases/unreachable/CB-UNREACH-003",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNREACH-004",
+      "category": "unreachable",
+      "path": "cases/unreachable/CB-UNREACH-004",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNREACH-005",
+      "category": "unreachable",
+      "path": "cases/unreachable/CB-UNREACH-005",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNREACH-006",
+      "category": "unreachable",
+      "path": "cases/unreachable/CB-UNREACH-006",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNREACH-007",
+      "category": "unreachable",
+      "path": "cases/unreachable/CB-UNREACH-007",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNREACH-008",
+      "category": "unreachable",
+      "path": "cases/unreachable/CB-UNREACH-008",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNREACH-009",
+      "category": "unreachable",
+      "path": "cases/unreachable/CB-UNREACH-009",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNREACH-010",
+      "category": "unreachable",
+      "path": "cases/unreachable/CB-UNREACH-010",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNREACH-011",
+      "category": "unreachable",
+      "path": "cases/unreachable/CB-UNREACH-011",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNREACH-012",
+      "category": "unreachable",
+      "path": "cases/unreachable/CB-UNREACH-012",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNREACH-013",
+      "category": "unreachable",
+      "path": "cases/unreachable/CB-UNREACH-013",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SUSP-001",
+      "category": "suspicious",
+      "path": "cases/suspicious/CB-SUSP-001",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SUSP-002",
+      "category": "suspicious",
+      "path": "cases/suspicious/CB-SUSP-002",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SUSP-003",
+      "category": "suspicious",
+      "path": "cases/suspicious/CB-SUSP-003",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SUSP-004",
+      "category": "suspicious",
+      "path": "cases/suspicious/CB-SUSP-004",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SUSP-005",
+      "category": "suspicious",
+      "path": "cases/suspicious/CB-SUSP-005",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SUSP-006",
+      "category": "suspicious",
+      "path": "cases/suspicious/CB-SUSP-006",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SUSP-007",
+      "category": "suspicious",
+      "path": "cases/suspicious/CB-SUSP-007",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SUSP-008",
+      "category": "suspicious",
+      "path": "cases/suspicious/CB-SUSP-008",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SLOP-001",
+      "category": "slopsquatting",
+      "path": "cases/slopsquatting/CB-SLOP-001",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SLOP-002",
+      "category": "slopsquatting",
+      "path": "cases/slopsquatting/CB-SLOP-002",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SLOP-003",
+      "category": "slopsquatting",
+      "path": "cases/slopsquatting/CB-SLOP-003",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SLOP-004",
+      "category": "slopsquatting",
+      "path": "cases/slopsquatting/CB-SLOP-004",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SLOP-005",
+      "category": "slopsquatting",
+      "path": "cases/slopsquatting/CB-SLOP-005",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SLOP-006",
+      "category": "slopsquatting",
+      "path": "cases/slopsquatting/CB-SLOP-006",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SLOP-007",
+      "category": "slopsquatting",
+      "path": "cases/slopsquatting/CB-SLOP-007",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SLOP-008",
+      "category": "slopsquatting",
+      "path": "cases/slopsquatting/CB-SLOP-008",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SLOP-009",
+      "category": "slopsquatting",
+      "path": "cases/slopsquatting/CB-SLOP-009",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-SLOP-010",
+      "category": "slopsquatting",
+      "path": "cases/slopsquatting/CB-SLOP-010",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-DC-001",
+      "category": "dependency_confusion",
+      "path": "cases/dependency_confusion/CB-DC-001",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-DC-002",
+      "category": "dependency_confusion",
+      "path": "cases/dependency_confusion/CB-DC-002",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-DC-003",
+      "category": "dependency_confusion",
+      "path": "cases/dependency_confusion/CB-DC-003",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-DC-004",
+      "category": "dependency_confusion",
+      "path": "cases/dependency_confusion/CB-DC-004",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-DC-005",
+      "category": "dependency_confusion",
+      "path": "cases/dependency_confusion/CB-DC-005",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-DC-006",
+      "category": "dependency_confusion",
+      "path": "cases/dependency_confusion/CB-DC-006",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-DC-007",
+      "category": "dependency_confusion",
+      "path": "cases/dependency_confusion/CB-DC-007",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNPIN-001",
+      "category": "unpinned",
+      "path": "cases/unpinned/CB-UNPIN-001",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNPIN-002",
+      "category": "unpinned",
+      "path": "cases/unpinned/CB-UNPIN-002",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNPIN-003",
+      "category": "unpinned",
+      "path": "cases/unpinned/CB-UNPIN-003",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNPIN-004",
+      "category": "unpinned",
+      "path": "cases/unpinned/CB-UNPIN-004",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNPIN-005",
+      "category": "unpinned",
+      "path": "cases/unpinned/CB-UNPIN-005",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNPIN-006",
+      "category": "unpinned",
+      "path": "cases/unpinned/CB-UNPIN-006",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNPIN-007",
+      "category": "unpinned",
+      "path": "cases/unpinned/CB-UNPIN-007",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNPIN-008",
+      "category": "unpinned",
+      "path": "cases/unpinned/CB-UNPIN-008",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNPIN-009",
+      "category": "unpinned",
+      "path": "cases/unpinned/CB-UNPIN-009",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNPIN-010",
+      "category": "unpinned",
+      "path": "cases/unpinned/CB-UNPIN-010",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNPIN-011",
+      "category": "unpinned",
+      "path": "cases/unpinned/CB-UNPIN-011",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNPIN-012",
+      "category": "unpinned",
+      "path": "cases/unpinned/CB-UNPIN-012",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-LOCK-001",
+      "category": "lockfile_mismatch",
+      "path": "cases/lockfile_mismatch/CB-LOCK-001",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-LOCK-002",
+      "category": "lockfile_mismatch",
+      "path": "cases/lockfile_mismatch/CB-LOCK-002",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-LOCK-003",
+      "category": "lockfile_mismatch",
+      "path": "cases/lockfile_mismatch/CB-LOCK-003",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-LOCK-004",
+      "category": "lockfile_mismatch",
+      "path": "cases/lockfile_mismatch/CB-LOCK-004",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-LOCK-005",
+      "category": "lockfile_mismatch",
+      "path": "cases/lockfile_mismatch/CB-LOCK-005",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-LOCK-006",
+      "category": "lockfile_mismatch",
+      "path": "cases/lockfile_mismatch/CB-LOCK-006",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-LOCK-007",
+      "category": "lockfile_mismatch",
+      "path": "cases/lockfile_mismatch/CB-LOCK-007",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-LOCK-008",
+      "category": "lockfile_mismatch",
+      "path": "cases/lockfile_mismatch/CB-LOCK-008",
+      "supported": true,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-MIX-001",
+      "category": "mixed",
+      "path": "cases/mixed/CB-MIX-001",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE+SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-MIX-002",
+      "category": "mixed",
+      "path": "cases/mixed/CB-MIX-002",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE+SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-MIX-003",
+      "category": "mixed",
+      "path": "cases/mixed/CB-MIX-003",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-MIX-004",
+      "category": "mixed",
+      "path": "cases/mixed/CB-MIX-004",
+      "supported": true,
+      "expected_verdict": "DISMISSED+SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-MIX-005",
+      "category": "mixed",
+      "path": "cases/mixed/CB-MIX-005",
+      "supported": true,
+      "expected_verdict": "SUSPICIOUS",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-MIX-006",
+      "category": "mixed",
+      "path": "cases/mixed/CB-MIX-006",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE+SUSPICIOUS",
+      "engine_boundary": "java_source_reachability"
+    },
+    {
+      "case_id": "CB-MIX-007",
+      "category": "mixed",
+      "path": "cases/mixed/CB-MIX-007",
+      "supported": true,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-MIX-008",
+      "category": "mixed",
+      "path": "cases/mixed/CB-MIX-008",
+      "supported": true,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNSUP-001",
+      "category": "unsupported",
+      "path": "cases/unsupported/CB-UNSUP-001",
+      "supported": false,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNSUP-002",
+      "category": "unsupported",
+      "path": "cases/unsupported/CB-UNSUP-002",
+      "supported": false,
+      "expected_verdict": "DISMISSED",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNSUP-003",
+      "category": "unsupported",
+      "path": "cases/unsupported/CB-UNSUP-003",
+      "supported": false,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNSUP-004",
+      "category": "unsupported",
+      "path": "cases/unsupported/CB-UNSUP-004",
+      "supported": false,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNSUP-005",
+      "category": "unsupported",
+      "path": "cases/unsupported/CB-UNSUP-005",
+      "supported": false,
+      "expected_verdict": "CLEAN",
+      "engine_boundary": null
+    },
+    {
+      "case_id": "CB-UNSUP-006",
+      "category": "unsupported",
+      "path": "cases/unsupported/CB-UNSUP-006",
+      "supported": false,
+      "expected_verdict": "ACTIONABLE",
+      "engine_boundary": null
+    }
+  ]
+}

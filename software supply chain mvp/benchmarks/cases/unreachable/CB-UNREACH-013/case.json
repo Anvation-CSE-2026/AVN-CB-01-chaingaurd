@@ -1,0 +1,106 @@
+{
+  "case_id": "CB-UNREACH-013",
+  "category": "unreachable",
+  "ecosystem": [
+    "Maven"
+  ],
+  "description": "Guava declared; Java app does not import it.",
+  "fixture_path": "cases/unreachable/CB-UNREACH-013/repo",
+  "pins": [
+    {
+      "ecosystem": "Maven",
+      "name": "com.google.guava:guava",
+      "version": "31.1-jre"
+    }
+  ],
+  "imports": [],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [
+      {
+        "id": "GHSA-5mg8-w23w-74h3",
+        "aliases": [
+          "CVE-2020-8908",
+          "SNYK-JAVA-COMGOOGLEGUAVA-1015415"
+        ],
+        "ecosystem": "Maven",
+        "package": "com.google.guava:guava",
+        "version": "31.1-jre",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [
+          "createTempDir"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-5mg8-w23w-74h3"
+      },
+      {
+        "id": "GHSA-7g45-4rm6-3mm3",
+        "aliases": [
+          "CVE-2023-2976"
+        ],
+        "ecosystem": "Maven",
+        "package": "com.google.guava:guava",
+        "version": "31.1-jre",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [
+          "FileBackedOutputStream"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-7g45-4rm6-3mm3"
+      }
+    ],
+    "reachable": [],
+    "unreachable": [
+      {
+        "id": "GHSA-5mg8-w23w-74h3",
+        "package": "com.google.guava:guava",
+        "version": "31.1-jre",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "GHSA-7g45-4rm6-3mm3",
+        "package": "com.google.guava:guava",
+        "version": "31.1-jre",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      }
+    ],
+    "undetermined": [],
+    "suspicious_packages": [],
+    "checked_packages": [
+      "Maven|com.google.guava:guava"
+    ],
+    "dependency_disclosures": [],
+    "expected_verdict": "DISMISSED",
+    "expected_exit_code": 0
+  },
+  "expected_verdict": "DISMISSED",
+  "expected_exit_code": 0,
+  "expected_evidence": [
+    "GHSA-5mg8-w23w-74h3 (com.google.guava:guava@31.1-jre): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "GHSA-7g45-4rm6-3mm3 (com.google.guava:guava@31.1-jre): no import evidence; status not_affected (vulnerable_code_not_present)"
+  ],
+  "dependency_disclosures": [],
+  "rationale": "Declared but not used by the application (no Java-import analysis is needed here).",
+  "call_path": "",
+  "supported": true,
+  "engine_boundary": null,
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

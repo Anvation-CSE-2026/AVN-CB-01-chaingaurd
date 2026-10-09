@@ -1,0 +1,117 @@
+{
+  "case_id": "CB-REACH-013",
+  "category": "reachable",
+  "ecosystem": [
+    "Maven"
+  ],
+  "description": "Guava Files.createTempDir() called from Java source.",
+  "fixture_path": "cases/reachable/CB-REACH-013/repo",
+  "pins": [
+    {
+      "ecosystem": "Maven",
+      "name": "com.google.guava:guava",
+      "version": "31.1-jre"
+    }
+  ],
+  "imports": [
+    "com.google.guava:guava"
+  ],
+  "calls": {
+    "com.google.guava:guava": [
+      "createTempDir"
+    ]
+  },
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [
+      {
+        "id": "GHSA-5mg8-w23w-74h3",
+        "aliases": [
+          "CVE-2020-8908",
+          "SNYK-JAVA-COMGOOGLEGUAVA-1015415"
+        ],
+        "ecosystem": "Maven",
+        "package": "com.google.guava:guava",
+        "version": "31.1-jre",
+        "label": "REACHABLE",
+        "expected_status": "affected",
+        "expected_justification": null,
+        "advisory_functions": [
+          "createTempDir"
+        ],
+        "called_functions": [
+          "createTempDir"
+        ],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-5mg8-w23w-74h3"
+      },
+      {
+        "id": "GHSA-7g45-4rm6-3mm3",
+        "aliases": [
+          "CVE-2023-2976"
+        ],
+        "ecosystem": "Maven",
+        "package": "com.google.guava:guava",
+        "version": "31.1-jre",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_in_execute_path",
+        "advisory_functions": [
+          "FileBackedOutputStream"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-7g45-4rm6-3mm3"
+      }
+    ],
+    "reachable": [
+      {
+        "id": "GHSA-5mg8-w23w-74h3",
+        "package": "com.google.guava:guava",
+        "version": "31.1-jre",
+        "vulnerable_function": [
+          "createTempDir"
+        ],
+        "call_path": "src/main/java/app/App.java:dir -> Files.createTempDir"
+      }
+    ],
+    "unreachable": [
+      {
+        "id": "GHSA-7g45-4rm6-3mm3",
+        "package": "com.google.guava:guava",
+        "version": "31.1-jre",
+        "reason": "vulnerable_code_not_in_execute_path",
+        "dead_code_functions": []
+      }
+    ],
+    "undetermined": [],
+    "suspicious_packages": [],
+    "checked_packages": [
+      "Maven|com.google.guava:guava"
+    ],
+    "dependency_disclosures": [],
+    "expected_verdict": "ACTIONABLE",
+    "expected_exit_code": 1
+  },
+  "expected_verdict": "ACTIONABLE",
+  "expected_exit_code": 1,
+  "expected_evidence": [
+    "GHSA-5mg8-w23w-74h3 (com.google.guava:guava@31.1-jre): call to ['createTempDir'] recorded in calls evidence; status affected",
+    "GHSA-7g45-4rm6-3mm3 (com.google.guava:guava@31.1-jre): import evidence with no vulnerable call; status not_affected (vulnerable_code_not_in_execute_path)"
+  ],
+  "dependency_disclosures": [],
+  "rationale": "Ground truth is reachable. Java reachability is outside the engine's analysis.",
+  "call_path": "src/main/java/app/App.java:dir -> Files.createTempDir",
+  "supported": true,
+  "engine_boundary": "java_source_reachability",
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

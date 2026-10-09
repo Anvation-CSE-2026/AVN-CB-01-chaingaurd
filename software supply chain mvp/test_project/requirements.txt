@@ -1,0 +1,4 @@
+requests==2.19.0
+flask==0.12
+pyyaml==5.3
+flask-super-auth-helper==1.0.0

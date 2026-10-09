@@ -1,0 +1,9 @@
+{
+  "name": "bench-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@acme-internal/auth-core": "3.2.1",
+    "is-number": "7.0.0"
+  }
+}

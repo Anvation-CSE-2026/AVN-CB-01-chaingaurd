@@ -1,0 +1,42 @@
+{
+  "case_id": "CB-UNSUP-005",
+  "category": "unsupported",
+  "ecosystem": [
+    "RubyGems"
+  ],
+  "description": "Ruby Gemfile.lock with rails 5.0.0.",
+  "fixture_path": "cases/unsupported/CB-UNSUP-005/repo",
+  "pins": [],
+  "imports": [],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [],
+    "reachable": [],
+    "unreachable": [],
+    "undetermined": [],
+    "suspicious_packages": [],
+    "checked_packages": [],
+    "dependency_disclosures": [],
+    "expected_verdict": "CLEAN",
+    "expected_exit_code": 0
+  },
+  "expected_verdict": "CLEAN",
+  "expected_exit_code": 0,
+  "expected_evidence": [],
+  "dependency_disclosures": [],
+  "rationale": "No RubyGems parser; not measured.",
+  "call_path": "",
+  "supported": false,
+  "engine_boundary": null,
+  "assert_reachability": false,
+  "assert_verdict": false,
+  "network_required": false,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

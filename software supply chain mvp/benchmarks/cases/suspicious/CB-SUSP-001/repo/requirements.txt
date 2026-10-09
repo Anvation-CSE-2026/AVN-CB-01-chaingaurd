@@ -1,0 +1,1 @@
+pandas-fastload-turbo==1.0.0

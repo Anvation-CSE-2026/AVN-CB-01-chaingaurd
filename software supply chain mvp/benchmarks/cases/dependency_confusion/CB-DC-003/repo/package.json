@@ -1,0 +1,9 @@
+{
+  "name": "bench-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@acme-corp/payments-core": "1.0.0",
+    "is-number": "7.0.0"
+  }
+}

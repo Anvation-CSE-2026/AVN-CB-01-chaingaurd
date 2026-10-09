@@ -1,0 +1,69 @@
+{
+  "case_id": "CB-MIX-008",
+  "category": "mixed",
+  "ecosystem": [
+    "PyPI",
+    "npm"
+  ],
+  "description": "Discovery trap: venv, node_modules, clean pin and unpinned line.",
+  "fixture_path": "cases/mixed/CB-MIX-008/repo",
+  "pins": [
+    {
+      "ecosystem": "PyPI",
+      "name": "pyyaml",
+      "version": "6.0.1"
+    }
+  ],
+  "imports": [
+    "pyyaml"
+  ],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [],
+    "reachable": [],
+    "unreachable": [],
+    "undetermined": [],
+    "suspicious_packages": [],
+    "checked_packages": [
+      "PyPI|pyyaml"
+    ],
+    "dependency_disclosures": [
+      {
+        "name": "pillow",
+        "allowed_reasons": [
+          "unpinned_or_ranged_requirement"
+        ]
+      }
+    ],
+    "expected_verdict": "CLEAN",
+    "expected_exit_code": 0
+  },
+  "expected_verdict": "CLEAN",
+  "expected_exit_code": 0,
+  "expected_evidence": [
+    "pillow: disclosed as one of ['unpinned_or_ranged_requirement'] in unresolved_dependencies"
+  ],
+  "dependency_disclosures": [
+    {
+      "name": "pillow",
+      "allowed_reasons": [
+        "unpinned_or_ranged_requirement"
+      ]
+    }
+  ],
+  "rationale": "Skipped directories must not contribute findings while the real unpinned line is disclosed.",
+  "call_path": "",
+  "supported": true,
+  "engine_boundary": null,
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

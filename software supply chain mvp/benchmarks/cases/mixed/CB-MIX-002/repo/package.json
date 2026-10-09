@@ -1,0 +1,11 @@
+{
+  "name": "bench-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "lodash": "4.17.15",
+    "minimist": "1.2.0",
+    "lodash-fast-utils-core": "1.0.0",
+    "uuid": "^9.0.1"
+  }
+}

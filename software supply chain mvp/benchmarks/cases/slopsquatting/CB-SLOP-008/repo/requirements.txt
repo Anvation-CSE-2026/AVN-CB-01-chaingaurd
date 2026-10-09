@@ -1,0 +1,1 @@
+sqlalchemy-fastpool-x==1.0.0

@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.pytest_cache/
+scan_workspace/
+scan_workspace_*/
+
+# Private node configuration and secrets. The service reads the process
+# environment, so a .env file is for export only -- it must never be committed,
+# and neither must a node token. .env.example is the tracked template.
+.env
+.env.local
+.env.*.local
+*.token
+node.token

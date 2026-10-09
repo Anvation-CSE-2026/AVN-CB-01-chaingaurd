@@ -1,0 +1,58 @@
+{
+  "case_id": "CB-UNPIN-001",
+  "category": "unpinned",
+  "ecosystem": [
+    "PyPI"
+  ],
+  "description": "Lower-bound range requests>=2.19.0.",
+  "fixture_path": "cases/unpinned/CB-UNPIN-001/repo",
+  "pins": [],
+  "imports": [],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [],
+    "reachable": [],
+    "unreachable": [],
+    "undetermined": [],
+    "suspicious_packages": [],
+    "checked_packages": [],
+    "dependency_disclosures": [
+      {
+        "name": "requests",
+        "allowed_reasons": [
+          "unpinned_or_ranged_requirement"
+        ]
+      }
+    ],
+    "expected_verdict": "CLEAN",
+    "expected_exit_code": 0
+  },
+  "expected_verdict": "CLEAN",
+  "expected_exit_code": 0,
+  "expected_evidence": [
+    "requests: disclosed as one of ['unpinned_or_ranged_requirement'] in unresolved_dependencies"
+  ],
+  "dependency_disclosures": [
+    {
+      "name": "requests",
+      "allowed_reasons": [
+        "unpinned_or_ranged_requirement"
+      ]
+    }
+  ],
+  "rationale": "Ranged declaration must be disclosed.",
+  "call_path": "",
+  "supported": true,
+  "engine_boundary": null,
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": false,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

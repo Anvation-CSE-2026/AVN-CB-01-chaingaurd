@@ -1,0 +1,2 @@
+--index-url https://pypi.internal.example.invalid/simple
+acme-core-utils==2.0.1

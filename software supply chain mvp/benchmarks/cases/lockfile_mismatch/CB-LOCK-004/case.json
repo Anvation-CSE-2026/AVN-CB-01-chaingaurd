@@ -1,0 +1,324 @@
+{
+  "case_id": "CB-LOCK-004",
+  "category": "lockfile_mismatch",
+  "ecosystem": [
+    "PyPI"
+  ],
+  "description": "flask pinned in requirements, absent from poetry.lock.",
+  "fixture_path": "cases/lockfile_mismatch/CB-LOCK-004/repo",
+  "pins": [
+    {
+      "ecosystem": "PyPI",
+      "name": "flask",
+      "version": "0.12"
+    },
+    {
+      "ecosystem": "PyPI",
+      "name": "requests",
+      "version": "2.32.4"
+    }
+  ],
+  "imports": [],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [
+      {
+        "id": "GHSA-562c-5r94-xh97",
+        "aliases": [
+          "CVE-2018-1000656",
+          "PYSEC-2018-66"
+        ],
+        "ecosystem": "PyPI",
+        "package": "flask",
+        "version": "0.12",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-562c-5r94-xh97"
+      },
+      {
+        "id": "GHSA-5wv5-4vpf-pj6m",
+        "aliases": [
+          "CVE-2019-1010083",
+          "PYSEC-2019-179"
+        ],
+        "ecosystem": "PyPI",
+        "package": "flask",
+        "version": "0.12",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-5wv5-4vpf-pj6m"
+      },
+      {
+        "id": "GHSA-68rp-wp8r-4726",
+        "aliases": [
+          "CVE-2026-27205",
+          "PYSEC-2026-2151"
+        ],
+        "ecosystem": "PyPI",
+        "package": "flask",
+        "version": "0.12",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-68rp-wp8r-4726"
+      },
+      {
+        "id": "GHSA-m2qf-hxjv-5gpq",
+        "aliases": [
+          "CVE-2023-30861",
+          "PYSEC-2023-62"
+        ],
+        "ecosystem": "PyPI",
+        "package": "flask",
+        "version": "0.12",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-m2qf-hxjv-5gpq"
+      },
+      {
+        "id": "PYSEC-2018-66",
+        "aliases": [
+          "CVE-2018-1000656",
+          "GHSA-562c-5r94-xh97"
+        ],
+        "ecosystem": "PyPI",
+        "package": "flask",
+        "version": "0.12",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/PYSEC-2018-66"
+      },
+      {
+        "id": "PYSEC-2019-179",
+        "aliases": [
+          "CVE-2019-1010083",
+          "GHSA-5wv5-4vpf-pj6m"
+        ],
+        "ecosystem": "PyPI",
+        "package": "flask",
+        "version": "0.12",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/PYSEC-2019-179"
+      },
+      {
+        "id": "PYSEC-2023-62",
+        "aliases": [
+          "CVE-2023-30861",
+          "GHSA-m2qf-hxjv-5gpq"
+        ],
+        "ecosystem": "PyPI",
+        "package": "flask",
+        "version": "0.12",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/PYSEC-2023-62"
+      },
+      {
+        "id": "PYSEC-2026-2151",
+        "aliases": [
+          "CVE-2026-27205",
+          "GHSA-68rp-wp8r-4726"
+        ],
+        "ecosystem": "PyPI",
+        "package": "flask",
+        "version": "0.12",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/PYSEC-2026-2151"
+      },
+      {
+        "id": "GHSA-gc5v-m9x4-r6x2",
+        "aliases": [
+          "CVE-2026-25645",
+          "PYSEC-2026-2275"
+        ],
+        "ecosystem": "PyPI",
+        "package": "requests",
+        "version": "2.32.4",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-gc5v-m9x4-r6x2"
+      },
+      {
+        "id": "PYSEC-2026-2275",
+        "aliases": [
+          "CVE-2026-25645",
+          "GHSA-gc5v-m9x4-r6x2"
+        ],
+        "ecosystem": "PyPI",
+        "package": "requests",
+        "version": "2.32.4",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/PYSEC-2026-2275"
+      }
+    ],
+    "reachable": [],
+    "unreachable": [
+      {
+        "id": "GHSA-562c-5r94-xh97",
+        "package": "flask",
+        "version": "0.12",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "GHSA-5wv5-4vpf-pj6m",
+        "package": "flask",
+        "version": "0.12",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "GHSA-68rp-wp8r-4726",
+        "package": "flask",
+        "version": "0.12",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "GHSA-m2qf-hxjv-5gpq",
+        "package": "flask",
+        "version": "0.12",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "PYSEC-2018-66",
+        "package": "flask",
+        "version": "0.12",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "PYSEC-2019-179",
+        "package": "flask",
+        "version": "0.12",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "PYSEC-2023-62",
+        "package": "flask",
+        "version": "0.12",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "PYSEC-2026-2151",
+        "package": "flask",
+        "version": "0.12",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "GHSA-gc5v-m9x4-r6x2",
+        "package": "requests",
+        "version": "2.32.4",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "PYSEC-2026-2275",
+        "package": "requests",
+        "version": "2.32.4",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      }
+    ],
+    "undetermined": [],
+    "suspicious_packages": [],
+    "checked_packages": [
+      "PyPI|flask",
+      "PyPI|requests"
+    ],
+    "dependency_disclosures": [
+      {
+        "name": "flask",
+        "allowed_reasons": [
+          "declared_not_in_lockfile"
+        ]
+      }
+    ],
+    "expected_verdict": "DISMISSED",
+    "expected_exit_code": 0
+  },
+  "expected_verdict": "DISMISSED",
+  "expected_exit_code": 0,
+  "expected_evidence": [
+    "GHSA-562c-5r94-xh97 (flask@0.12): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "GHSA-5wv5-4vpf-pj6m (flask@0.12): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "GHSA-68rp-wp8r-4726 (flask@0.12): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "GHSA-m2qf-hxjv-5gpq (flask@0.12): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "PYSEC-2018-66 (flask@0.12): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "PYSEC-2019-179 (flask@0.12): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "PYSEC-2023-62 (flask@0.12): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "PYSEC-2026-2151 (flask@0.12): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "GHSA-gc5v-m9x4-r6x2 (requests@2.32.4): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "PYSEC-2026-2275 (requests@2.32.4): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "flask: disclosed as one of ['declared_not_in_lockfile'] in unresolved_dependencies"
+  ],
+  "dependency_disclosures": [
+    {
+      "name": "flask",
+      "allowed_reasons": [
+        "declared_not_in_lockfile"
+      ]
+    }
+  ],
+  "rationale": "A declared dependency that the lock does not resolve is a disclosable inconsistency.",
+  "call_path": "",
+  "supported": true,
+  "engine_boundary": null,
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

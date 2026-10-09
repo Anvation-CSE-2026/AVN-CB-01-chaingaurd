@@ -1,0 +1,62 @@
+{
+  "case_id": "CB-SUSP-008",
+  "category": "suspicious",
+  "ecosystem": [
+    "PyPI"
+  ],
+  "description": "Ghost PyPI name with a patched PyYAML.",
+  "fixture_path": "cases/suspicious/CB-SUSP-008/repo",
+  "pins": [
+    {
+      "ecosystem": "PyPI",
+      "name": "numpy-accel-fastmath",
+      "version": "0.9.2"
+    },
+    {
+      "ecosystem": "PyPI",
+      "name": "pyyaml",
+      "version": "6.0.1"
+    }
+  ],
+  "imports": [
+    "pyyaml"
+  ],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [],
+    "reachable": [],
+    "unreachable": [],
+    "undetermined": [],
+    "suspicious_packages": [
+      "numpy-accel-fastmath"
+    ],
+    "checked_packages": [
+      "PyPI|numpy-accel-fastmath",
+      "PyPI|pyyaml"
+    ],
+    "dependency_disclosures": [],
+    "expected_verdict": "SUSPICIOUS",
+    "expected_exit_code": 1
+  },
+  "expected_verdict": "SUSPICIOUS",
+  "expected_exit_code": 1,
+  "expected_evidence": [
+    "numpy-accel-fastmath: suspicious with a 'package not found in registry' reason"
+  ],
+  "dependency_disclosures": [],
+  "rationale": "Ghost plus a clean legitimate dependency.",
+  "call_path": "",
+  "supported": true,
+  "engine_boundary": null,
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

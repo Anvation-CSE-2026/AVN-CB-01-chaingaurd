@@ -1,0 +1,52 @@
+{
+  "case_id": "CB-CLEAN-004",
+  "category": "clean",
+  "ecosystem": [
+    "Maven"
+  ],
+  "description": "Maven guava 33.3.1-jre, patched and unaffected.",
+  "fixture_path": "cases/clean/CB-CLEAN-004/repo",
+  "pins": [
+    {
+      "ecosystem": "Maven",
+      "name": "com.google.guava:guava",
+      "version": "33.3.1-jre"
+    }
+  ],
+  "imports": [
+    "com.google.guava:guava"
+  ],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [],
+    "reachable": [],
+    "unreachable": [],
+    "undetermined": [],
+    "suspicious_packages": [],
+    "checked_packages": [
+      "Maven|com.google.guava:guava"
+    ],
+    "dependency_disclosures": [],
+    "expected_verdict": "CLEAN",
+    "expected_exit_code": 0
+  },
+  "expected_verdict": "CLEAN",
+  "expected_exit_code": 0,
+  "expected_evidence": [],
+  "dependency_disclosures": [],
+  "rationale": "Zero OSV advisories for guava 33.3.1-jre.",
+  "call_path": "",
+  "supported": true,
+  "engine_boundary": null,
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

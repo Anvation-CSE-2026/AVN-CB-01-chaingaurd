@@ -1,0 +1,13 @@
+# Runtime dependencies for the ChainGuard scanning API.
+fastapi>=0.110
+uvicorn>=0.27
+# The real engine is executed by this interpreter; requests is the engine's
+# only declared runtime dependency and is REQUIRED for OSV lookups (without it
+# the scanner silently reports zero vulnerabilities).
+requests>=2.31,<3
+# Used to call a remote node when remote execution is enabled (remote.py), and
+# by the test suite to drive the app. Without it remote mode answers
+# REMOTE_CLIENT_UNAVAILABLE; local scanning does not need it.
+httpx>=0.27
+# test-only
+pytest>=8

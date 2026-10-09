@@ -1,0 +1,62 @@
+{
+  "case_id": "CB-SUSP-005",
+  "category": "suspicious",
+  "ecosystem": [
+    "npm"
+  ],
+  "description": "Ghost npm name with is-number.",
+  "fixture_path": "cases/suspicious/CB-SUSP-005/repo",
+  "pins": [
+    {
+      "ecosystem": "npm",
+      "name": "express-router-autoload-x",
+      "version": "2.0.0"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "is-number",
+      "version": "7.0.0"
+    }
+  ],
+  "imports": [
+    "is-number"
+  ],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [],
+    "reachable": [],
+    "unreachable": [],
+    "undetermined": [],
+    "suspicious_packages": [
+      "express-router-autoload-x"
+    ],
+    "checked_packages": [
+      "npm|express-router-autoload-x",
+      "npm|is-number"
+    ],
+    "dependency_disclosures": [],
+    "expected_verdict": "SUSPICIOUS",
+    "expected_exit_code": 1
+  },
+  "expected_verdict": "SUSPICIOUS",
+  "expected_exit_code": 1,
+  "expected_evidence": [
+    "express-router-autoload-x: suspicious with a 'package not found in registry' reason"
+  ],
+  "dependency_disclosures": [],
+  "rationale": "Non-existent unscoped npm package.",
+  "call_path": "",
+  "supported": true,
+  "engine_boundary": null,
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

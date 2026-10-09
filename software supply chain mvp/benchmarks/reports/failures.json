@@ -1,0 +1,2314 @@
+{
+  "count": 30,
+  "failures": [
+    {
+      "case_id": "CB-DC-001",
+      "category": "dependency_confusion",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "disclosures"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "SUSPICIOUS",
+      "actual_verdict": "SUSPICIOUS",
+      "exit_code": 1,
+      "notes": [
+        "missing disclosure --extra-index-url ['index_override_option']"
+      ],
+      "expected_findings": [],
+      "actual_findings": [],
+      "output_dir": ".runs/CB-DC-001"
+    },
+    {
+      "case_id": "CB-DC-002",
+      "category": "dependency_confusion",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "disclosures"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "SUSPICIOUS",
+      "actual_verdict": "SUSPICIOUS",
+      "exit_code": 1,
+      "notes": [
+        "missing disclosure --index-url ['index_override_option']"
+      ],
+      "expected_findings": [],
+      "actual_findings": [],
+      "output_dir": ".runs/CB-DC-002"
+    },
+    {
+      "case_id": "CB-DC-006",
+      "category": "dependency_confusion",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "disclosures"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "CLEAN",
+      "actual_verdict": "CLEAN",
+      "exit_code": 0,
+      "notes": [
+        "missing disclosure --extra-index-url ['index_override_option']"
+      ],
+      "expected_findings": [],
+      "actual_findings": [],
+      "output_dir": ".runs/CB-DC-006"
+    },
+    {
+      "case_id": "CB-LOCK-001",
+      "category": "lockfile_mismatch",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "disclosures"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "DISMISSED",
+      "actual_verdict": "DISMISSED",
+      "exit_code": 0,
+      "notes": [
+        "missing disclosure requests ['manifest_lockfile_mismatch']"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-9hjg-9r4m-mvj7",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-9wx4-h78v-vm56",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-gc5v-m9x4-r6x2",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-j8r2-6x86-q33q",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-x84v-xcm2-53pg",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2018-28",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2023-74",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2026-1872",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2026-1873",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2026-2275",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-gc5v-m9x4-r6x2",
+          "package": "requests",
+          "version": "2.32.4",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2026-2275",
+          "package": "requests",
+          "version": "2.32.4",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-9hjg-9r4m-mvj7",
+          "package": "requests",
+          "version": "2.19.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-9wx4-h78v-vm56",
+          "package": "requests",
+          "version": "2.19.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-gc5v-m9x4-r6x2",
+          "package": "requests",
+          "version": "2.19.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-j8r2-6x86-q33q",
+          "package": "requests",
+          "version": "2.19.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-x84v-xcm2-53pg",
+          "package": "requests",
+          "version": "2.19.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2018-28",
+          "package": "requests",
+          "version": "2.19.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2023-74",
+          "package": "requests",
+          "version": "2.19.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2026-1872",
+          "package": "requests",
+          "version": "2.19.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2026-1873",
+          "package": "requests",
+          "version": "2.19.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2026-2275",
+          "package": "requests",
+          "version": "2.19.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-gc5v-m9x4-r6x2",
+          "package": "requests",
+          "version": "2.32.4",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2026-2275",
+          "package": "requests",
+          "version": "2.32.4",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        }
+      ],
+      "output_dir": ".runs/CB-LOCK-001"
+    },
+    {
+      "case_id": "CB-LOCK-003",
+      "category": "lockfile_mismatch",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "disclosures"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "DISMISSED",
+      "actual_verdict": "DISMISSED",
+      "exit_code": 0,
+      "notes": [
+        "missing disclosure pyyaml ['manifest_lockfile_mismatch']"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-6757-jp84-gxfx",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-8q59-q68h-6hv4",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2020-96",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2021-142",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-6757-jp84-gxfx",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-8q59-q68h-6hv4",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2020-96",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2021-142",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        }
+      ],
+      "output_dir": ".runs/CB-LOCK-003"
+    },
+    {
+      "case_id": "CB-LOCK-004",
+      "category": "lockfile_mismatch",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "disclosures"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "DISMISSED",
+      "actual_verdict": "DISMISSED",
+      "exit_code": 0,
+      "notes": [
+        "missing disclosure flask ['declared_not_in_lockfile']"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-562c-5r94-xh97",
+          "package": "flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-5wv5-4vpf-pj6m",
+          "package": "flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-68rp-wp8r-4726",
+          "package": "flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-m2qf-hxjv-5gpq",
+          "package": "flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2018-66",
+          "package": "flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2019-179",
+          "package": "flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2023-62",
+          "package": "flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2026-2151",
+          "package": "flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-gc5v-m9x4-r6x2",
+          "package": "requests",
+          "version": "2.32.4",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2026-2275",
+          "package": "requests",
+          "version": "2.32.4",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-562c-5r94-xh97",
+          "package": "flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-5wv5-4vpf-pj6m",
+          "package": "flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-68rp-wp8r-4726",
+          "package": "flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-m2qf-hxjv-5gpq",
+          "package": "flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2018-66",
+          "package": "flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2019-179",
+          "package": "flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2023-62",
+          "package": "flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2026-2151",
+          "package": "flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-gc5v-m9x4-r6x2",
+          "package": "requests",
+          "version": "2.32.4",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2026-2275",
+          "package": "requests",
+          "version": "2.32.4",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        }
+      ],
+      "output_dir": ".runs/CB-LOCK-004"
+    },
+    {
+      "case_id": "CB-LOCK-007",
+      "category": "lockfile_mismatch",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "disclosures"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "DISMISSED",
+      "actual_verdict": "DISMISSED",
+      "exit_code": 0,
+      "notes": [
+        "missing disclosure Flask ['manifest_lockfile_mismatch']"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-562c-5r94-xh97",
+          "package": "Flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-5wv5-4vpf-pj6m",
+          "package": "Flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-68rp-wp8r-4726",
+          "package": "Flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-m2qf-hxjv-5gpq",
+          "package": "Flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2018-66",
+          "package": "Flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2019-179",
+          "package": "Flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2023-62",
+          "package": "Flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2026-2151",
+          "package": "Flask",
+          "version": "0.12",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-68rp-wp8r-4726",
+          "package": "flask",
+          "version": "2.3.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2026-2151",
+          "package": "flask",
+          "version": "2.3.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-562c-5r94-xh97",
+          "package": "Flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-5wv5-4vpf-pj6m",
+          "package": "Flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-68rp-wp8r-4726",
+          "package": "Flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-m2qf-hxjv-5gpq",
+          "package": "Flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2018-66",
+          "package": "Flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2019-179",
+          "package": "Flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2023-62",
+          "package": "Flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2026-2151",
+          "package": "Flask",
+          "version": "0.12",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-68rp-wp8r-4726",
+          "package": "flask",
+          "version": "2.3.3",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "PYSEC-2026-2151",
+          "package": "flask",
+          "version": "2.3.3",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        }
+      ],
+      "output_dir": ".runs/CB-LOCK-007"
+    },
+    {
+      "case_id": "CB-MIX-002",
+      "category": "mixed",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "reachability",
+        "disclosures"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "ACTIONABLE+SUSPICIOUS",
+      "actual_verdict": "ACTIONABLE+SUSPICIOUS",
+      "exit_code": 1,
+      "notes": [
+        "missing disclosure uuid ['ranged_declaration_proxied']"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-29mw-wpgm-hmr9",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-35jh-r3h4-6jhm",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-f23m-r3pf-42rh",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-p6mc-m468-83gw",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-r5fr-rjxr-66jc",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-xxjr-mmjv-4gpg",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-vh95-rmgr-6w4m",
+          "package": "minimist",
+          "version": "1.2.0",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-xvch-5gv4-984h",
+          "package": "minimist",
+          "version": "1.2.0",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-w5hq-g745-h8pq",
+          "package": "uuid",
+          "version": "9.0.1",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-29mw-wpgm-hmr9",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-35jh-r3h4-6jhm",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-f23m-r3pf-42rh",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-p6mc-m468-83gw",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-r5fr-rjxr-66jc",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "GHSA-xxjr-mmjv-4gpg",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-vh95-rmgr-6w4m",
+          "package": "minimist",
+          "version": "1.2.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-xvch-5gv4-984h",
+          "package": "minimist",
+          "version": "1.2.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-w5hq-g745-h8pq",
+          "package": "uuid",
+          "version": "9.0.1",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        }
+      ],
+      "output_dir": ".runs/CB-MIX-002"
+    },
+    {
+      "case_id": "CB-MIX-003",
+      "category": "mixed",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "disclosures"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "ACTIONABLE",
+      "actual_verdict": "ACTIONABLE",
+      "exit_code": 1,
+      "notes": [
+        "missing disclosure pyyaml ['manifest_lockfile_mismatch']"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-6757-jp84-gxfx",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-8q59-q68h-6hv4",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        },
+        {
+          "id": "PYSEC-2020-96",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        },
+        {
+          "id": "PYSEC-2021-142",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-6757-jp84-gxfx",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "GHSA-8q59-q68h-6hv4",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "PYSEC-2020-96",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "PYSEC-2021-142",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        }
+      ],
+      "output_dir": ".runs/CB-MIX-003"
+    },
+    {
+      "case_id": "CB-MIX-004",
+      "category": "mixed",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "reachability",
+        "disclosures",
+        "verdict"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "DISMISSED+SUSPICIOUS",
+      "actual_verdict": "ACTIONABLE+SUSPICIOUS",
+      "exit_code": 1,
+      "notes": [
+        "missing disclosure --extra-index-url ['index_override_option']",
+        "verdict expected DISMISSED+SUSPICIOUS got ACTIONABLE+SUSPICIOUS"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-6757-jp84-gxfx",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-8q59-q68h-6hv4",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2020-96",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2021-142",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-6757-jp84-gxfx",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "GHSA-8q59-q68h-6hv4",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "PYSEC-2020-96",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "PYSEC-2021-142",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        }
+      ],
+      "output_dir": ".runs/CB-MIX-004"
+    },
+    {
+      "case_id": "CB-MIX-006",
+      "category": "mixed",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "reachability",
+        "verdict"
+      ],
+      "engine_boundary": "java_source_reachability",
+      "expected_verdict": "ACTIONABLE+SUSPICIOUS",
+      "actual_verdict": "DISMISSED+SUSPICIOUS",
+      "exit_code": 1,
+      "notes": [
+        "verdict expected ACTIONABLE+SUSPICIOUS got DISMISSED+SUSPICIOUS"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-5mg8-w23w-74h3",
+          "package": "com.google.guava:guava",
+          "version": "31.1-jre",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-7g45-4rm6-3mm3",
+          "package": "com.google.guava:guava",
+          "version": "31.1-jre",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-5mg8-w23w-74h3",
+          "package": "com.google.guava:guava",
+          "version": "31.1-jre",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-7g45-4rm6-3mm3",
+          "package": "com.google.guava:guava",
+          "version": "31.1-jre",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        }
+      ],
+      "output_dir": ".runs/CB-MIX-006"
+    },
+    {
+      "case_id": "CB-MIX-007",
+      "category": "mixed",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "reachability"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "ACTIONABLE",
+      "actual_verdict": "ACTIONABLE",
+      "exit_code": 1,
+      "notes": [],
+      "expected_findings": [
+        {
+          "id": "GHSA-29mw-wpgm-hmr9",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-35jh-r3h4-6jhm",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-f23m-r3pf-42rh",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-p6mc-m468-83gw",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-r5fr-rjxr-66jc",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-xxjr-mmjv-4gpg",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-29mw-wpgm-hmr9",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-35jh-r3h4-6jhm",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-f23m-r3pf-42rh",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "GHSA-p6mc-m468-83gw",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-r5fr-rjxr-66jc",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "GHSA-xxjr-mmjv-4gpg",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "affected",
+          "justification": null
+        }
+      ],
+      "output_dir": ".runs/CB-MIX-007"
+    },
+    {
+      "case_id": "CB-REACH-006",
+      "category": "reachable",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "reachability",
+        "verdict",
+        "exit_code"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "ACTIONABLE",
+      "actual_verdict": "DISMISSED",
+      "exit_code": 0,
+      "notes": [
+        "verdict expected ACTIONABLE got DISMISSED",
+        "exit expected 1 got 0"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-6757-jp84-gxfx",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-8q59-q68h-6hv4",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        },
+        {
+          "id": "PYSEC-2020-96",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        },
+        {
+          "id": "PYSEC-2021-142",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-6757-jp84-gxfx",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-8q59-q68h-6hv4",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "PYSEC-2020-96",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "PYSEC-2021-142",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        }
+      ],
+      "output_dir": ".runs/CB-REACH-006"
+    },
+    {
+      "case_id": "CB-REACH-008",
+      "category": "reachable",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "reachability"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "ACTIONABLE",
+      "actual_verdict": "ACTIONABLE",
+      "exit_code": 1,
+      "notes": [],
+      "expected_findings": [
+        {
+          "id": "GHSA-29mw-wpgm-hmr9",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-35jh-r3h4-6jhm",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-f23m-r3pf-42rh",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-p6mc-m468-83gw",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-r5fr-rjxr-66jc",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-xxjr-mmjv-4gpg",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-29mw-wpgm-hmr9",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-35jh-r3h4-6jhm",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-f23m-r3pf-42rh",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-p6mc-m468-83gw",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-r5fr-rjxr-66jc",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "GHSA-xxjr-mmjv-4gpg",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        }
+      ],
+      "output_dir": ".runs/CB-REACH-008"
+    },
+    {
+      "case_id": "CB-REACH-009",
+      "category": "reachable",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "reachability"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "ACTIONABLE",
+      "actual_verdict": "ACTIONABLE",
+      "exit_code": 1,
+      "notes": [],
+      "expected_findings": [
+        {
+          "id": "GHSA-29mw-wpgm-hmr9",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-35jh-r3h4-6jhm",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-f23m-r3pf-42rh",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-p6mc-m468-83gw",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-r5fr-rjxr-66jc",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-xxjr-mmjv-4gpg",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-29mw-wpgm-hmr9",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-35jh-r3h4-6jhm",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-f23m-r3pf-42rh",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-p6mc-m468-83gw",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-r5fr-rjxr-66jc",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "GHSA-xxjr-mmjv-4gpg",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        }
+      ],
+      "output_dir": ".runs/CB-REACH-009"
+    },
+    {
+      "case_id": "CB-REACH-012",
+      "category": "reachable",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "reachability",
+        "verdict",
+        "exit_code"
+      ],
+      "engine_boundary": "java_source_reachability",
+      "expected_verdict": "ACTIONABLE",
+      "actual_verdict": "DISMISSED",
+      "exit_code": 0,
+      "notes": [
+        "verdict expected ACTIONABLE got DISMISSED",
+        "exit expected 1 got 0"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-5mg8-w23w-74h3",
+          "package": "com.google.guava:guava",
+          "version": "31.1-jre",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-7g45-4rm6-3mm3",
+          "package": "com.google.guava:guava",
+          "version": "31.1-jre",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-5mg8-w23w-74h3",
+          "package": "com.google.guava:guava",
+          "version": "31.1-jre",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-7g45-4rm6-3mm3",
+          "package": "com.google.guava:guava",
+          "version": "31.1-jre",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        }
+      ],
+      "output_dir": ".runs/CB-REACH-012"
+    },
+    {
+      "case_id": "CB-REACH-013",
+      "category": "reachable",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "reachability",
+        "verdict",
+        "exit_code"
+      ],
+      "engine_boundary": "java_source_reachability",
+      "expected_verdict": "ACTIONABLE",
+      "actual_verdict": "DISMISSED",
+      "exit_code": 0,
+      "notes": [
+        "verdict expected ACTIONABLE got DISMISSED",
+        "exit expected 1 got 0"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-5mg8-w23w-74h3",
+          "package": "com.google.guava:guava",
+          "version": "31.1-jre",
+          "label": "REACHABLE",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-7g45-4rm6-3mm3",
+          "package": "com.google.guava:guava",
+          "version": "31.1-jre",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-5mg8-w23w-74h3",
+          "package": "com.google.guava:guava",
+          "version": "31.1-jre",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-7g45-4rm6-3mm3",
+          "package": "com.google.guava:guava",
+          "version": "31.1-jre",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        }
+      ],
+      "output_dir": ".runs/CB-REACH-013"
+    },
+    {
+      "case_id": "CB-UNPIN-006",
+      "category": "unpinned",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "disclosures"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "DISMISSED",
+      "actual_verdict": "DISMISSED",
+      "exit_code": 0,
+      "notes": [
+        "missing disclosure lodash ['ranged_declaration_proxied']"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-29mw-wpgm-hmr9",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-35jh-r3h4-6jhm",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-f23m-r3pf-42rh",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-p6mc-m468-83gw",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-r5fr-rjxr-66jc",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-xxjr-mmjv-4gpg",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-29mw-wpgm-hmr9",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-35jh-r3h4-6jhm",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-f23m-r3pf-42rh",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-p6mc-m468-83gw",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-r5fr-rjxr-66jc",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-xxjr-mmjv-4gpg",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        }
+      ],
+      "output_dir": ".runs/CB-UNPIN-006"
+    },
+    {
+      "case_id": "CB-UNPIN-007",
+      "category": "unpinned",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "disclosures"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "DISMISSED",
+      "actual_verdict": "DISMISSED",
+      "exit_code": 0,
+      "notes": [
+        "missing disclosure minimist ['ranged_declaration_proxied']"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-vh95-rmgr-6w4m",
+          "package": "minimist",
+          "version": "1.2.0",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-xvch-5gv4-984h",
+          "package": "minimist",
+          "version": "1.2.0",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-vh95-rmgr-6w4m",
+          "package": "minimist",
+          "version": "1.2.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        },
+        {
+          "id": "GHSA-xvch-5gv4-984h",
+          "package": "minimist",
+          "version": "1.2.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_present"
+        }
+      ],
+      "output_dir": ".runs/CB-UNPIN-007"
+    },
+    {
+      "case_id": "CB-UNREACH-005",
+      "category": "unreachable",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "reachability",
+        "verdict",
+        "exit_code"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "DISMISSED",
+      "actual_verdict": "ACTIONABLE",
+      "exit_code": 1,
+      "notes": [
+        "verdict expected DISMISSED got ACTIONABLE",
+        "exit expected 0 got 1"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-6757-jp84-gxfx",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-8q59-q68h-6hv4",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2020-96",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2021-142",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-6757-jp84-gxfx",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "GHSA-8q59-q68h-6hv4",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "PYSEC-2020-96",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "PYSEC-2021-142",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        }
+      ],
+      "output_dir": ".runs/CB-UNREACH-005"
+    },
+    {
+      "case_id": "CB-UNREACH-006",
+      "category": "unreachable",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "reachability",
+        "verdict",
+        "exit_code"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "DISMISSED",
+      "actual_verdict": "ACTIONABLE",
+      "exit_code": 1,
+      "notes": [
+        "verdict expected DISMISSED got ACTIONABLE",
+        "exit expected 0 got 1"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-6757-jp84-gxfx",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-8q59-q68h-6hv4",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2020-96",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2021-142",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-6757-jp84-gxfx",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "GHSA-8q59-q68h-6hv4",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "PYSEC-2020-96",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "PYSEC-2021-142",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        }
+      ],
+      "output_dir": ".runs/CB-UNREACH-006"
+    },
+    {
+      "case_id": "CB-UNREACH-007",
+      "category": "unreachable",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "reachability",
+        "verdict",
+        "exit_code"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "DISMISSED",
+      "actual_verdict": "ACTIONABLE",
+      "exit_code": 1,
+      "notes": [
+        "verdict expected DISMISSED got ACTIONABLE",
+        "exit expected 0 got 1"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-6757-jp84-gxfx",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-8q59-q68h-6hv4",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2020-96",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "PYSEC-2021-142",
+          "package": "pyyaml",
+          "version": "5.3",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-6757-jp84-gxfx",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "GHSA-8q59-q68h-6hv4",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "PYSEC-2020-96",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "PYSEC-2021-142",
+          "package": "pyyaml",
+          "version": "5.3",
+          "status": "affected",
+          "justification": null
+        }
+      ],
+      "output_dir": ".runs/CB-UNREACH-007"
+    },
+    {
+      "case_id": "CB-UNREACH-011",
+      "category": "unreachable",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "reachability",
+        "verdict",
+        "exit_code"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "DISMISSED",
+      "actual_verdict": "ACTIONABLE",
+      "exit_code": 1,
+      "notes": [
+        "verdict expected DISMISSED got ACTIONABLE",
+        "exit expected 0 got 1"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-29mw-wpgm-hmr9",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-35jh-r3h4-6jhm",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-f23m-r3pf-42rh",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-p6mc-m468-83gw",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-r5fr-rjxr-66jc",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-xxjr-mmjv-4gpg",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-29mw-wpgm-hmr9",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-35jh-r3h4-6jhm",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-f23m-r3pf-42rh",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-p6mc-m468-83gw",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-r5fr-rjxr-66jc",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "affected",
+          "justification": null
+        },
+        {
+          "id": "GHSA-xxjr-mmjv-4gpg",
+          "package": "lodash",
+          "version": "4.17.15",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        }
+      ],
+      "output_dir": ".runs/CB-UNREACH-011"
+    },
+    {
+      "case_id": "CB-UNREACH-012",
+      "category": "unreachable",
+      "match_status": "FAIL",
+      "failed_checks": [
+        "verdict",
+        "exit_code"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "ACTIONABLE",
+      "actual_verdict": "DISMISSED",
+      "exit_code": 0,
+      "notes": [
+        "verdict expected ACTIONABLE got DISMISSED",
+        "exit expected 1 got 0"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-vh95-rmgr-6w4m",
+          "package": "minimist",
+          "version": "1.2.0",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-xvch-5gv4-984h",
+          "package": "minimist",
+          "version": "1.2.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        }
+      ],
+      "actual_findings": [
+        {
+          "id": "GHSA-vh95-rmgr-6w4m",
+          "package": "minimist",
+          "version": "1.2.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        },
+        {
+          "id": "GHSA-xvch-5gv4-984h",
+          "package": "minimist",
+          "version": "1.2.0",
+          "status": "not_affected",
+          "justification": "vulnerable_code_not_in_execute_path"
+        }
+      ],
+      "output_dir": ".runs/CB-UNREACH-012"
+    },
+    {
+      "case_id": "CB-UNSUP-001",
+      "category": "unsupported",
+      "match_status": "UNSUPPORTED",
+      "failed_checks": [
+        "vulnerabilities"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "ACTIONABLE",
+      "actual_verdict": "CLEAN",
+      "exit_code": 0,
+      "notes": [
+        "format is outside the engine's parser set; result recorded, not scored"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-9hjg-9r4m-mvj7",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-9wx4-h78v-vm56",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-gc5v-m9x4-r6x2",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-j8r2-6x86-q33q",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-x84v-xcm2-53pg",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "PYSEC-2018-28",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "PYSEC-2023-74",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "PYSEC-2026-1872",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "PYSEC-2026-1873",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "PYSEC-2026-2275",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        }
+      ],
+      "actual_findings": [],
+      "output_dir": ".runs/CB-UNSUP-001"
+    },
+    {
+      "case_id": "CB-UNSUP-002",
+      "category": "unsupported",
+      "match_status": "UNSUPPORTED",
+      "failed_checks": [
+        "vulnerabilities"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "DISMISSED",
+      "actual_verdict": "CLEAN",
+      "exit_code": 0,
+      "notes": [
+        "format is outside the engine's parser set; result recorded, not scored"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-29mw-wpgm-hmr9",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-35jh-r3h4-6jhm",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-f23m-r3pf-42rh",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-p6mc-m468-83gw",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-r5fr-rjxr-66jc",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        },
+        {
+          "id": "GHSA-xxjr-mmjv-4gpg",
+          "package": "lodash",
+          "version": "4.17.15",
+          "label": "UNREACHABLE",
+          "expected_status": "not_affected"
+        }
+      ],
+      "actual_findings": [],
+      "output_dir": ".runs/CB-UNSUP-002"
+    },
+    {
+      "case_id": "CB-UNSUP-003",
+      "category": "unsupported",
+      "match_status": "UNSUPPORTED",
+      "failed_checks": [],
+      "engine_boundary": null,
+      "expected_verdict": "CLEAN",
+      "actual_verdict": "CLEAN",
+      "exit_code": 0,
+      "notes": [
+        "format is outside the engine's parser set; result recorded, not scored"
+      ],
+      "expected_findings": [],
+      "actual_findings": [],
+      "output_dir": ".runs/CB-UNSUP-003"
+    },
+    {
+      "case_id": "CB-UNSUP-004",
+      "category": "unsupported",
+      "match_status": "UNSUPPORTED",
+      "failed_checks": [],
+      "engine_boundary": null,
+      "expected_verdict": "CLEAN",
+      "actual_verdict": "CLEAN",
+      "exit_code": 0,
+      "notes": [
+        "format is outside the engine's parser set; result recorded, not scored"
+      ],
+      "expected_findings": [],
+      "actual_findings": [],
+      "output_dir": ".runs/CB-UNSUP-004"
+    },
+    {
+      "case_id": "CB-UNSUP-005",
+      "category": "unsupported",
+      "match_status": "UNSUPPORTED",
+      "failed_checks": [],
+      "engine_boundary": null,
+      "expected_verdict": "CLEAN",
+      "actual_verdict": "CLEAN",
+      "exit_code": 0,
+      "notes": [
+        "format is outside the engine's parser set; result recorded, not scored"
+      ],
+      "expected_findings": [],
+      "actual_findings": [],
+      "output_dir": ".runs/CB-UNSUP-005"
+    },
+    {
+      "case_id": "CB-UNSUP-006",
+      "category": "unsupported",
+      "match_status": "UNSUPPORTED",
+      "failed_checks": [
+        "vulnerabilities"
+      ],
+      "engine_boundary": null,
+      "expected_verdict": "ACTIONABLE",
+      "actual_verdict": "CLEAN",
+      "exit_code": 0,
+      "notes": [
+        "format is outside the engine's parser set; result recorded, not scored"
+      ],
+      "expected_findings": [
+        {
+          "id": "GHSA-9hjg-9r4m-mvj7",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-9wx4-h78v-vm56",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-gc5v-m9x4-r6x2",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-j8r2-6x86-q33q",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "GHSA-x84v-xcm2-53pg",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "PYSEC-2018-28",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "PYSEC-2023-74",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "PYSEC-2026-1872",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "PYSEC-2026-1873",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        },
+        {
+          "id": "PYSEC-2026-2275",
+          "package": "requests",
+          "version": "2.19.0",
+          "label": "UNDETERMINED",
+          "expected_status": "affected"
+        }
+      ],
+      "actual_findings": [],
+      "output_dir": ".runs/CB-UNSUP-006"
+    }
+  ]
+}

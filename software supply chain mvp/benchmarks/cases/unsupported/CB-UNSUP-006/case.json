@@ -1,0 +1,275 @@
+{
+  "case_id": "CB-UNSUP-006",
+  "category": "unsupported",
+  "ecosystem": [
+    "PyPI"
+  ],
+  "description": "Pipenv Pipfile.lock with requests 2.19.0.",
+  "fixture_path": "cases/unsupported/CB-UNSUP-006/repo",
+  "pins": [
+    {
+      "ecosystem": "PyPI",
+      "name": "requests",
+      "version": "2.19.0"
+    }
+  ],
+  "imports": [
+    "requests"
+  ],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [
+      {
+        "id": "GHSA-9hjg-9r4m-mvj7",
+        "aliases": [
+          "CVE-2024-47081",
+          "PYSEC-2026-1872"
+        ],
+        "ecosystem": "PyPI",
+        "package": "requests",
+        "version": "2.19.0",
+        "label": "UNDETERMINED",
+        "expected_status": "affected",
+        "expected_justification": null,
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-9hjg-9r4m-mvj7"
+      },
+      {
+        "id": "GHSA-9wx4-h78v-vm56",
+        "aliases": [
+          "CVE-2024-35195",
+          "PYSEC-2026-1873"
+        ],
+        "ecosystem": "PyPI",
+        "package": "requests",
+        "version": "2.19.0",
+        "label": "UNDETERMINED",
+        "expected_status": "affected",
+        "expected_justification": null,
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-9wx4-h78v-vm56"
+      },
+      {
+        "id": "GHSA-gc5v-m9x4-r6x2",
+        "aliases": [
+          "CVE-2026-25645",
+          "PYSEC-2026-2275"
+        ],
+        "ecosystem": "PyPI",
+        "package": "requests",
+        "version": "2.19.0",
+        "label": "UNDETERMINED",
+        "expected_status": "affected",
+        "expected_justification": null,
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-gc5v-m9x4-r6x2"
+      },
+      {
+        "id": "GHSA-j8r2-6x86-q33q",
+        "aliases": [
+          "CVE-2023-32681",
+          "PYSEC-2023-74"
+        ],
+        "ecosystem": "PyPI",
+        "package": "requests",
+        "version": "2.19.0",
+        "label": "UNDETERMINED",
+        "expected_status": "affected",
+        "expected_justification": null,
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-j8r2-6x86-q33q"
+      },
+      {
+        "id": "GHSA-x84v-xcm2-53pg",
+        "aliases": [
+          "CVE-2018-18074",
+          "PYSEC-2018-28"
+        ],
+        "ecosystem": "PyPI",
+        "package": "requests",
+        "version": "2.19.0",
+        "label": "UNDETERMINED",
+        "expected_status": "affected",
+        "expected_justification": null,
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-x84v-xcm2-53pg"
+      },
+      {
+        "id": "PYSEC-2018-28",
+        "aliases": [
+          "CVE-2018-18074",
+          "GHSA-x84v-xcm2-53pg"
+        ],
+        "ecosystem": "PyPI",
+        "package": "requests",
+        "version": "2.19.0",
+        "label": "UNDETERMINED",
+        "expected_status": "affected",
+        "expected_justification": null,
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/PYSEC-2018-28"
+      },
+      {
+        "id": "PYSEC-2023-74",
+        "aliases": [
+          "CVE-2023-32681",
+          "GHSA-j8r2-6x86-q33q"
+        ],
+        "ecosystem": "PyPI",
+        "package": "requests",
+        "version": "2.19.0",
+        "label": "UNDETERMINED",
+        "expected_status": "affected",
+        "expected_justification": null,
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/PYSEC-2023-74"
+      },
+      {
+        "id": "PYSEC-2026-1872",
+        "aliases": [
+          "CVE-2024-47081",
+          "GHSA-9hjg-9r4m-mvj7"
+        ],
+        "ecosystem": "PyPI",
+        "package": "requests",
+        "version": "2.19.0",
+        "label": "UNDETERMINED",
+        "expected_status": "affected",
+        "expected_justification": null,
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/PYSEC-2026-1872"
+      },
+      {
+        "id": "PYSEC-2026-1873",
+        "aliases": [
+          "CVE-2024-35195",
+          "GHSA-9wx4-h78v-vm56"
+        ],
+        "ecosystem": "PyPI",
+        "package": "requests",
+        "version": "2.19.0",
+        "label": "UNDETERMINED",
+        "expected_status": "affected",
+        "expected_justification": null,
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/PYSEC-2026-1873"
+      },
+      {
+        "id": "PYSEC-2026-2275",
+        "aliases": [
+          "CVE-2026-25645",
+          "GHSA-gc5v-m9x4-r6x2"
+        ],
+        "ecosystem": "PyPI",
+        "package": "requests",
+        "version": "2.19.0",
+        "label": "UNDETERMINED",
+        "expected_status": "affected",
+        "expected_justification": null,
+        "advisory_functions": [],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/PYSEC-2026-2275"
+      }
+    ],
+    "reachable": [],
+    "unreachable": [],
+    "undetermined": [
+      {
+        "id": "GHSA-9hjg-9r4m-mvj7",
+        "package": "requests"
+      },
+      {
+        "id": "GHSA-9wx4-h78v-vm56",
+        "package": "requests"
+      },
+      {
+        "id": "GHSA-gc5v-m9x4-r6x2",
+        "package": "requests"
+      },
+      {
+        "id": "GHSA-j8r2-6x86-q33q",
+        "package": "requests"
+      },
+      {
+        "id": "GHSA-x84v-xcm2-53pg",
+        "package": "requests"
+      },
+      {
+        "id": "PYSEC-2018-28",
+        "package": "requests"
+      },
+      {
+        "id": "PYSEC-2023-74",
+        "package": "requests"
+      },
+      {
+        "id": "PYSEC-2026-1872",
+        "package": "requests"
+      },
+      {
+        "id": "PYSEC-2026-1873",
+        "package": "requests"
+      },
+      {
+        "id": "PYSEC-2026-2275",
+        "package": "requests"
+      }
+    ],
+    "suspicious_packages": [],
+    "checked_packages": [
+      "PyPI|requests"
+    ],
+    "dependency_disclosures": [],
+    "expected_verdict": "ACTIONABLE",
+    "expected_exit_code": 1
+  },
+  "expected_verdict": "ACTIONABLE",
+  "expected_exit_code": 1,
+  "expected_evidence": [
+    "GHSA-9hjg-9r4m-mvj7 (requests@2.19.0): import evidence present; no function data -> conservative affected",
+    "GHSA-9wx4-h78v-vm56 (requests@2.19.0): import evidence present; no function data -> conservative affected",
+    "GHSA-gc5v-m9x4-r6x2 (requests@2.19.0): import evidence present; no function data -> conservative affected",
+    "GHSA-j8r2-6x86-q33q (requests@2.19.0): import evidence present; no function data -> conservative affected",
+    "GHSA-x84v-xcm2-53pg (requests@2.19.0): import evidence present; no function data -> conservative affected",
+    "PYSEC-2018-28 (requests@2.19.0): import evidence present; no function data -> conservative affected",
+    "PYSEC-2023-74 (requests@2.19.0): import evidence present; no function data -> conservative affected",
+    "PYSEC-2026-1872 (requests@2.19.0): import evidence present; no function data -> conservative affected",
+    "PYSEC-2026-1873 (requests@2.19.0): import evidence present; no function data -> conservative affected",
+    "PYSEC-2026-2275 (requests@2.19.0): import evidence present; no function data -> conservative affected"
+  ],
+  "dependency_disclosures": [],
+  "rationale": "Pipfile.lock is not parsed, so the pinned vulnerable version is missed.",
+  "call_path": "",
+  "supported": false,
+  "engine_boundary": null,
+  "assert_reachability": false,
+  "assert_verdict": false,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

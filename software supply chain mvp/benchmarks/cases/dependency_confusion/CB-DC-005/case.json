@@ -1,0 +1,52 @@
+{
+  "case_id": "CB-DC-005",
+  "category": "dependency_confusion",
+  "ecosystem": [
+    "PyPI"
+  ],
+  "description": "CONTROL: established public name, no index override.",
+  "fixture_path": "cases/dependency_confusion/CB-DC-005/repo",
+  "pins": [
+    {
+      "ecosystem": "PyPI",
+      "name": "requests-toolbelt",
+      "version": "1.0.0"
+    }
+  ],
+  "imports": [
+    "requests-toolbelt"
+  ],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [],
+    "reachable": [],
+    "unreachable": [],
+    "undetermined": [],
+    "suspicious_packages": [],
+    "checked_packages": [
+      "PyPI|requests-toolbelt"
+    ],
+    "dependency_disclosures": [],
+    "expected_verdict": "CLEAN",
+    "expected_exit_code": 0
+  },
+  "expected_verdict": "CLEAN",
+  "expected_exit_code": 0,
+  "expected_evidence": [],
+  "dependency_disclosures": [],
+  "rationale": "An established public package is not a confusion precondition by itself.",
+  "call_path": "",
+  "supported": true,
+  "engine_boundary": null,
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}

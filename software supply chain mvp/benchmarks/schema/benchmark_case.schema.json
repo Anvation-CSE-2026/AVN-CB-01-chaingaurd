@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "chainbench/benchmark_case.schema.json",
+  "title": "ChainBench-100 case metadata",
+  "description": "Contract for every benchmarks/cases/<category>/<CASE_ID>/case.json. Ground truth is authored independently of ChainGuard output.",
+  "type": "object",
+  "required": [
+    "case_id", "category", "ecosystem", "description", "fixture_path", "pins", "imports",
+    "calls", "dead_calls", "ground_truth", "expected_verdict", "expected_exit_code",
+    "expected_evidence", "dependency_disclosures", "rationale", "call_path", "supported",
+    "engine_boundary", "assert_reachability", "assert_verdict", "network_required", "safe_fixture"
+  ],
+  "properties": {
+    "case_id": {"type": "string", "pattern": "^CB-[A-Z]+-[0-9]{3}$"},
+    "category": {
+      "type": "string",
+      "enum": ["clean", "vulnerable", "reachable", "unreachable", "suspicious", "slopsquatting",
+               "dependency_confusion", "unpinned", "lockfile_mismatch", "mixed", "unsupported"]
+    },
+    "ecosystem": {"type": "array", "items": {"type": "string"}},
+    "description": {"type": "string"},
+    "fixture_path": {"type": "string", "description": "Path relative to benchmarks/ to the scanned repo/ directory"},
+    "pins": {
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["ecosystem", "name", "version"],
+        "properties": {"ecosystem": {"type": "string"}, "name": {"type": "string"}, "version": {"type": "string"}}
+      }
+    },
+    "imports": {"type": "array", "items": {"type": "string"}},
+    "calls": {"type": "object", "additionalProperties": {"type": "array", "items": {"type": "string"}}},
+    "dead_calls": {"type": "object", "additionalProperties": {"type": "array", "items": {"type": "string"}}},
+    "ground_truth": {
+      "type": "object",
+      "required": ["vulnerabilities", "reachable", "unreachable", "undetermined", "suspicious_packages",
+                   "checked_packages", "dependency_disclosures", "expected_verdict", "expected_exit_code"],
+      "properties": {
+        "vulnerabilities": {"type": "array"},
+        "reachable": {"type": "array"},
+        "unreachable": {"type": "array"},
+        "undetermined": {"type": "array"},
+        "suspicious_packages": {"type": "array", "items": {"type": "string"}},
+        "checked_packages": {"type": "array", "items": {"type": "string"}},
+        "dependency_disclosures": {"type": "array"},
+        "expected_verdict": {"type": "string", "enum": ["CLEAN", "DISMISSED", "ACTIONABLE", "SUSPICIOUS",
+                                                        "DISMISSED+SUSPICIOUS", "ACTIONABLE+SUSPICIOUS"]},
+        "expected_exit_code": {"type": "integer", "enum": [0, 1]}
+      }
+    },
+    "expected_verdict": {"type": "string"},
+    "expected_exit_code": {"type": "integer", "enum": [0, 1]},
+    "expected_evidence": {"type": "array", "items": {"type": "string"}},
+    "dependency_disclosures": {"type": "array"},
+    "rationale": {"type": "string"},
+    "call_path": {"type": "string"},
+    "supported": {"type": "boolean"},
+    "engine_boundary": {"type": ["string", "null"]},
+    "assert_reachability": {"type": "boolean"},
+    "assert_verdict": {"type": "boolean"},
+    "network_required": {"type": "boolean"},
+    "safe_fixture": {"const": true}
+  },
+  "additionalProperties": false
+}

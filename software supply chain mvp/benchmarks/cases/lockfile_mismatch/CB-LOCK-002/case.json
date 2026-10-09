@@ -1,0 +1,165 @@
+{
+  "case_id": "CB-LOCK-002",
+  "category": "lockfile_mismatch",
+  "ecosystem": [
+    "PyPI"
+  ],
+  "description": "poetry.lock only (lockfile-only resolution).",
+  "fixture_path": "cases/lockfile_mismatch/CB-LOCK-002/repo",
+  "pins": [
+    {
+      "ecosystem": "PyPI",
+      "name": "pyyaml",
+      "version": "5.3"
+    }
+  ],
+  "imports": [],
+  "calls": {},
+  "dead_calls": {},
+  "ground_truth": {
+    "vulnerabilities": [
+      {
+        "id": "GHSA-6757-jp84-gxfx",
+        "aliases": [
+          "CVE-2020-1747",
+          "PYSEC-2020-96"
+        ],
+        "ecosystem": "PyPI",
+        "package": "pyyaml",
+        "version": "5.3",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [
+          "yaml.full_load",
+          "yaml.load"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-6757-jp84-gxfx"
+      },
+      {
+        "id": "GHSA-8q59-q68h-6hv4",
+        "aliases": [
+          "CVE-2020-14343",
+          "PYSEC-2021-142"
+        ],
+        "ecosystem": "PyPI",
+        "package": "pyyaml",
+        "version": "5.3",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [
+          "yaml.full_load",
+          "yaml.load"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/GHSA-8q59-q68h-6hv4"
+      },
+      {
+        "id": "PYSEC-2020-96",
+        "aliases": [
+          "CVE-2020-1747",
+          "GHSA-6757-jp84-gxfx"
+        ],
+        "ecosystem": "PyPI",
+        "package": "pyyaml",
+        "version": "5.3",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [
+          "yaml.full_load",
+          "yaml.load"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/PYSEC-2020-96"
+      },
+      {
+        "id": "PYSEC-2021-142",
+        "aliases": [
+          "CVE-2020-14343",
+          "GHSA-8q59-q68h-6hv4"
+        ],
+        "ecosystem": "PyPI",
+        "package": "pyyaml",
+        "version": "5.3",
+        "label": "UNREACHABLE",
+        "expected_status": "not_affected",
+        "expected_justification": "vulnerable_code_not_present",
+        "advisory_functions": [
+          "yaml.full_load",
+          "yaml.load"
+        ],
+        "called_functions": [],
+        "dead_code_functions": [],
+        "source": "https://api.osv.dev/v1/vulns/PYSEC-2021-142"
+      }
+    ],
+    "reachable": [],
+    "unreachable": [
+      {
+        "id": "GHSA-6757-jp84-gxfx",
+        "package": "pyyaml",
+        "version": "5.3",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "GHSA-8q59-q68h-6hv4",
+        "package": "pyyaml",
+        "version": "5.3",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "PYSEC-2020-96",
+        "package": "pyyaml",
+        "version": "5.3",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      },
+      {
+        "id": "PYSEC-2021-142",
+        "package": "pyyaml",
+        "version": "5.3",
+        "reason": "vulnerable_code_not_present",
+        "dead_code_functions": []
+      }
+    ],
+    "undetermined": [],
+    "suspicious_packages": [],
+    "checked_packages": [
+      "PyPI|pyyaml"
+    ],
+    "dependency_disclosures": [],
+    "expected_verdict": "DISMISSED",
+    "expected_exit_code": 0
+  },
+  "expected_verdict": "DISMISSED",
+  "expected_exit_code": 0,
+  "expected_evidence": [
+    "GHSA-6757-jp84-gxfx (pyyaml@5.3): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "GHSA-8q59-q68h-6hv4 (pyyaml@5.3): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "PYSEC-2020-96 (pyyaml@5.3): no import evidence; status not_affected (vulnerable_code_not_present)",
+    "PYSEC-2021-142 (pyyaml@5.3): no import evidence; status not_affected (vulnerable_code_not_present)"
+  ],
+  "dependency_disclosures": [],
+  "rationale": "A vulnerable lock entry with no manifest must still be analysed.",
+  "call_path": "",
+  "supported": true,
+  "engine_boundary": null,
+  "assert_reachability": true,
+  "assert_verdict": true,
+  "network_required": true,
+  "safe_fixture": true,
+  "ground_truth_sources": {
+    "advisories": "OSV (manifests/source_snapshot.json osv_advisories)",
+    "registry": "PyPI/npm/Maven Central (manifests/source_snapshot.json registry)",
+    "function_truth": "curated from advisory text in tools/corpus_spec.py ADVISORY_FUNCTIONS",
+    "reachability_truth": "authored from fixture design in tools/corpus_spec.py"
+  }
+}
